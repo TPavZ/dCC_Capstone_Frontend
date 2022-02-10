@@ -49,28 +49,28 @@ const RegistForm = (props) => {
     return (
         <form onSubmit={handleSubmit}>
             <div className="fname">
-                <input className="form-control" type="text" value={firstName} placeholder="First Name" onChange={(event) => setFirstName(event.target.value)}></input>
+                <input type="text" value={firstName} placeholder="First Name" onChange={(event) => setFirstName(event.target.value)}></input>
             </div>
 
             <div className="mname">
-                <input className="form-control" type="text" value={middleName} placeholder="Middle Name" onChange={(event) => setMiddleName(event.target.value)}></input>
+                <input type="text" value={middleName} placeholder="Middle Name" onChange={(event) => setMiddleName(event.target.value)}></input>
             </div>
 
             <div className="lname">
-                <input className="form-control" type="text" value={lastName} placeholder="Last Name" onChange={(el) => setLastName(el.target.value)}></input>
+                <input type="text" value={lastName} placeholder="Last Name" onChange={(el) => setLastName(el.target.value)}></input>
             </div>
 
             <div className="email">
-                <input className="form-control" type="email" value={email} placeholder="Email" onChange={(el) => setEmail(el.target.value)}></input>
+                <input type="email" value={email} placeholder="Email" onChange={(el) => setEmail(el.target.value)}></input>
             </div>
 
             <div className="username">
-                <input className="form-control" type="text" value={username} placeholder="UserName" onChange={(el) => setUsername(el.target.value)}></input>
+                <input type="text" value={username} placeholder="UserName" onChange={(el) => setUsername(el.target.value)}></input>
             </div>
 
             {!passwordError &&
                 <div className="p1">
-                    <input className="form-control" type="password" value={password} placeholder="Password" onChange={(el) => setPassword(el.target.value)}></input>
+                    <input type="password" value={password} placeholder="Password" onChange={(el) => setPassword(el.target.value)}></input>
                 </div>
             }
             {passwordError &&
@@ -81,7 +81,7 @@ const RegistForm = (props) => {
 
             {!passwordError &&
                 <div className="p3">
-                    <input className="form-control" type="password" value={passwordCheck} placeholder="Re-type Password" onChange={(el) => setPasswordCheck(el.target.value)}></input>
+                    <input type="password" value={passwordCheck} placeholder="Re-type Password" onChange={(el) => setPasswordCheck(el.target.value)}></input>
                 </div>
             }
             {passwordError &&

@@ -23,8 +23,8 @@ const LoginForm = (props) => {
                 <button type="submit" onClick={handleSubmit}>Log In</button>
             </div>
         </form>
-    )
+    );
 
 }
 
-export default LoginForm
+export default LoginForm;

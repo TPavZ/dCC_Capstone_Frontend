@@ -1,5 +1,8 @@
 import LoginForm from "./Components/LoginForm/LoginForm";
 import RegistForm from "./Components/RegistForm/RegistForm";
+import CommentForm from "./Components/CommentForm/CommentForm";
+import ReplyForm from "./Components/ReplyForm/ReplyForm";
+
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
@@ -60,9 +63,11 @@ function App() {
 
   return (
     <div>
-      <h3>HELLO MOTHER FUCKERS</h3>
+      <h3>HEY DAR HOW'S ITS GOIN'</h3>
       <LoginForm login={login} />
       <RegistForm register={register}/>
+      <CommentForm />
+      <ReplyForm />
     </div>
   );
 }

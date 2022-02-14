@@ -1,11 +1,13 @@
 import LoginForm from "./Components/LoginForm/LoginForm";
 import RegistForm from "./Components/RegistForm/RegistForm";
-import CommentForm from "./Components/CommentForm/CommentForm";
-import ReplyForm from "./Components/ReplyForm/ReplyForm";
 import NavBar from "./Components/NavBar/NavBar";
+import ServiceTable from "./Components/ServiceTable/ServiceTable";
+import VehicleForm from "./Components/VehicleForm/VehicleForm";
+import { Route, Routes } from "react-router-dom";
 
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import LandingPage from "./Components/LandingPage/LandingPage";
 
 function App() {
   const [user, setUser] = useState(null);
@@ -26,7 +28,7 @@ function App() {
     }
     ).catch(error => {
       alert("Incorrect username or password. Please try again.")
-    })
+    });
   }
 
   /*   async function getUserInfo(user, token) {
@@ -57,14 +59,29 @@ function App() {
     }
     ).catch(error => {
       alert("Account creation failed. Please enter all required fields.")
-    })
+    });
+  }
 
+  async function add_vehicle(vehicleInfo) {
+    const jwt = localStorage.getItem("token");
+    await axios({
+      method: "post",
+      url: "http://127.0.0.1:8000/api/vehicles/",
+      headers: { Authorization: "Bearer " + jwt },
+      data: vehicleInfo
+    });
   }
 
 
   return (
     <div>
-      <NavBar />     
+      <NavBar />
+      <Routes>
+        <Route path="" element={<LandingPage />} />
+        <Route path="login" element={<LoginForm login={login} />} />
+        <Route path="register" element={<RegistForm register={register} />} />
+      </Routes>
+      {/* <VehicleForm add_vehicle={add_vehicle} /> */}
     </div>
   );
 }

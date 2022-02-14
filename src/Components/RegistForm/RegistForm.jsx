@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 const RegistForm = (props) => {
     const [username, setUsername] = useState("");
@@ -22,7 +23,6 @@ const RegistForm = (props) => {
     }
 
     function handleSubmit(el) {
-        debugger
         el.preventDefault();
         if (password === passwordCheck) {
             let userInfo = {
@@ -34,7 +34,6 @@ const RegistForm = (props) => {
                 "last_name": lastName
             }
             props.register(userInfo);
-            debugger
             resetForm();
             setPasswordError(false);
         }
@@ -49,11 +48,11 @@ const RegistForm = (props) => {
     return (
         <form onSubmit={handleSubmit}>
             <div className="fname">
-                <input type="text" value={firstName} placeholder="First Name" onChange={(event) => setFirstName(event.target.value)}></input>
+                <input type="text" value={firstName} placeholder="First Name" onChange={(el) => setFirstName(el.target.value)}></input>
             </div>
 
             <div className="mname">
-                <input type="text" value={middleName} placeholder="Middle Name" onChange={(event) => setMiddleName(event.target.value)}></input>
+                <input type="text" value={middleName} placeholder="Middle Name" onChange={(el) => setMiddleName(el.target.value)}></input>
             </div>
 
             <div className="lname">
@@ -91,6 +90,11 @@ const RegistForm = (props) => {
             }
             <div>
                 <button type="submit" onClick={handleSubmit}>Register</button>
+            </div>
+            <div className="back-button">
+                <Link to="/">
+                    <button type="button">Back</button>
+                </Link>
             </div>
         </form>
     );

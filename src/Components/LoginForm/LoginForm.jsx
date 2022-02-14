@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 const LoginForm = (props) => {
     const [username, setUsername] = useState("");
@@ -21,6 +22,11 @@ const LoginForm = (props) => {
             </div>
             <div>
                 <button type="submit" onClick={handleSubmit}>Log In</button>
+            </div>
+            <div className="back-button">
+                <Link to="/">
+                    <button type="button">Back</button>
+                </Link>
             </div>
         </form>
     );

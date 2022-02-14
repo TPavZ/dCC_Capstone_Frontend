@@ -2,17 +2,42 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Navbar, Container, Nav, Form, FormControl, Button, NavDropdown } from "react-bootstrap";
 import "./NavBar.css"
-
-
+import { useState } from "react"
+import SearchBar from "../SearchBar/SearchBar";
 import LoginForm from "../LoginForm/LoginForm";
 import RegistForm from "../RegistForm/RegistForm";
+import { Link } from "react-router-dom";
 
 
 const NavBar = (props) => {
+    const [searchTerm, setSearchTerm] = useState("");
+    const [alldata, setAllData] = useState([]);
+    const [searchResults, setSearchResults] = useState([]);
+
+    function handleSubmit(el) {
+        el.preventDefault();
+        props.filter(searchTerm);
+    }
+
+    const filter = (searchTerm) => {
+        console.log(searchTerm);
+        let results = alldata.filter((song) => {
+            if (song.title.toLowerCase().includes(searchTerm.toLowerCase())
+                + song.album.toLowerCase().includes(searchTerm.toLowerCase())
+                + song.artist.toLowerCase().includes(searchTerm.toLowerCase())
+                + song.genre.toLowerCase().includes(searchTerm.toLowerCase())
+                + song.release_date.includes(searchTerm)) {
+                return true
+            }
+            else return false
+        });
+        /* setfilteredSongs(results) */
+    }
+
     return (
         <Navbar bg="light" expand="lg" sticky="top">
             <Container fluid>
-                <Navbar.Brand href="#home">
+                <Navbar.Brand>
                     <img
                         src="/favicon.ico"
                         width="30"
@@ -25,16 +50,11 @@ const NavBar = (props) => {
                         className="me-auto my-2 my-lg-0"
                         style={{ maxHeight: '100px' }}
                         navbarScroll>
-                        <Nav.Link href="#action2" >Log In</Nav.Link>
-                        <Nav.Link href="#action2">Register</Nav.Link>
+                        <Link to="/login" >Log In</Link>
+                        <Link to="/Register" >Register</Link>
                     </Nav>
                     <Form className="d-flex">
-                        <FormControl
-                            type="search"
-                            placeholder="Search"
-                            className="me-2"
-                            aria-label="Search" />
-                        <Button variant="outline-dark">Search</Button>
+                        <SearchBar filter={filter} />
                     </Form>
                 </Navbar.Collapse>
             </Container>

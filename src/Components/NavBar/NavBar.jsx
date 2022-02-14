@@ -1,11 +1,7 @@
 /* This will include logo, app name, login button, regist button, and searchbar. */
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Navbar, Container, Nav, Form, FormControl, Button, NavDropdown } from "react-bootstrap";
+import { Navbar, Container, Nav } from "react-bootstrap";
 import "./NavBar.css"
-import { useState } from "react"
-import SearchBar from "../SearchBar/SearchBar";
-import LoginForm from "../LoginForm/LoginForm";
-import RegistForm from "../RegistForm/RegistForm";
 import { Link } from "react-router-dom";
 
 

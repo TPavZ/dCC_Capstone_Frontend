@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import ServiceForm from "../ServiceForm/ServiceForm";
 
 const LandingPage = (props) => {
     return (
@@ -7,6 +8,7 @@ const LandingPage = (props) => {
             <div>
                 <Link to="/login">
                     <button type="button">Log In</button></Link> or <Link to="/Register">Register</Link> here
+                    <ServiceForm/>
             </div>
         </div>
 

@@ -6,8 +6,7 @@ const LandingPage = (props) => {
             <p4>Hello Welcome To the Page</p4>
             <div>
                 <Link to="/login">
-                    <button type="button">Log In</button>
-                </Link> or <Link to="/Register">Register</Link> here
+                    <button type="button">Log In</button></Link> or <Link to="/Register">Register</Link> here
             </div>
         </div>
 

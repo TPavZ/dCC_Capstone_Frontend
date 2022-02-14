@@ -10,30 +10,6 @@ import { Link } from "react-router-dom";
 
 
 const NavBar = (props) => {
-    const [searchTerm, setSearchTerm] = useState("");
-    const [alldata, setAllData] = useState([]);
-    const [searchResults, setSearchResults] = useState([]);
-
-    function handleSubmit(el) {
-        el.preventDefault();
-        props.filter(searchTerm);
-    }
-
-    const filter = (searchTerm) => {
-        console.log(searchTerm);
-        let results = alldata.filter((song) => {
-            if (song.title.toLowerCase().includes(searchTerm.toLowerCase())
-                + song.album.toLowerCase().includes(searchTerm.toLowerCase())
-                + song.artist.toLowerCase().includes(searchTerm.toLowerCase())
-                + song.genre.toLowerCase().includes(searchTerm.toLowerCase())
-                + song.release_date.includes(searchTerm)) {
-                return true
-            }
-            else return false
-        });
-        /* setfilteredSongs(results) */
-    }
-
     return (
         <Navbar bg="light" expand="lg" sticky="top">
             <Container fluid>
@@ -50,12 +26,10 @@ const NavBar = (props) => {
                         className="me-auto my-2 my-lg-0"
                         style={{ maxHeight: '100px' }}
                         navbarScroll>
-                        <Link to="/login" >Log In</Link>
-                        <Link to="/Register" >Register</Link>
+                        <Link to="/login" ><button type="button">Log In</button></Link>
+                        <Link to="/Register" ><button type="button">Register</button></Link>
+                        <Link to="/" ><button type="button">Home</button></Link>
                     </Nav>
-                    <Form className="d-flex">
-                        <SearchBar filter={filter} />
-                    </Form>
                 </Navbar.Collapse>
             </Container>
         </Navbar>

@@ -106,7 +106,7 @@ const ServiceForm = (props) => {
             "other_services": otherServices,
             "service_details": serviceDetails,
         }
-        props.add_vehicle(vehicleInfo);
+        props.add_service(vehicleInfo);
         resetForm();
     }
 
@@ -119,18 +119,18 @@ const ServiceForm = (props) => {
                 <div><input name="service_date" type="date" value={serviceDate} onChange={(el) => setServiceDate(el.target.value)}></input> Date Of Service</div>
                 <div><strong>Check Services That Have Been Completed.</strong></div>
                 <div><input type="checkbox" name="battery_service" id="true" value={batteryService} onChange={(el) => setBatteryService(el.target.value)}></input> Battery Service</div>
-                <div><input type="checkbox" name="brakefluid_service" id="true" value={brakefluidService} onChange={(el) => setBrakefluidService(el.target.value)}></input> Brakefluid Service</div>
-                <div><input type="checkbox" name="brakefront_service" id="true" value={brakefrontService} onChange={(el) => setBrakefrontService(el.target.value)}></input> Brakefront Service</div>
-                <div><input type="checkbox" name="brakerear_service" id="true" value={brakerearService} onChange={(el) => setBrakerearService(el.target.value)}></input> Brakerear Service</div>
+                <div><input type="checkbox" name="brakefluid_service" id="true" value={brakefluidService} onChange={(el) => setBrakefluidService(el.target.value)}></input> Brake Fluid Service</div>
+                <div><input type="checkbox" name="brakefront_service" id="true" value={brakefrontService} onChange={(el) => setBrakefrontService(el.target.value)}></input> Front Brake Service</div>
+                <div><input type="checkbox" name="brakerear_service" id="true" value={brakerearService} onChange={(el) => setBrakerearService(el.target.value)}></input> Rear Brake Service</div>
                 <div><input type="checkbox" name="bulb_replacement" id="true" value={bulbReplacement} onChange={(el) => setBulbReplacement(el.target.value)}></input> Bulb Replacement</div>
-                <div><input type="checkbox" name="cabinfilter_replacement" id="true" value={cabinfilterReplacement} onChange={(el) => setCabinfilterReplacement(el.target.value)}></input> Cabinfilter Replacement</div>
+                <div><input type="checkbox" name="cabinfilter_replacement" id="true" value={cabinfilterReplacement} onChange={(el) => setCabinfilterReplacement(el.target.value)}></input> Cabin Filter Replacement</div>
                 <div><input type="checkbox" name="coolant_service" id="true" value={coolantService} onChange={(el) => setCoolantService(el.target.value)}></input> Coolant Service</div>
                 <div><input type="checkbox" name="differential_service" id="true" value={differentialService} onChange={(el) => setDifferentialService(el.target.value)}></input> Differential Service</div>
                 <div><input type="checkbox" name="drivebelt_replacement" id="true" value={drivebeltReplacement} onChange={(el) => setDrivebeltReplacement(el.target.value)}></input> Drivebelt Replacement</div>
                 <div><input type="checkbox" name="electrical_investigation" id="true" value={electricalInvestigation} onChange={(el) => setElectricalInvestigation(el.target.value)}></input> Electrical investigation</div>
-                <div><input type="checkbox" name="enginefilter_replacement" id="true" value={enginefilterReplacement} onChange={(el) => setEnginefilterReplacement(el.target.value)}></input> Enginefilter Replacement</div>
+                <div><input type="checkbox" name="enginefilter_replacement" id="true" value={enginefilterReplacement} onChange={(el) => setEnginefilterReplacement(el.target.value)}></input> Engine Filter Replacement</div>
                 <div><input type="checkbox" name="exahust_service" id="true" value={exahustService} onChange={(el) => setExahustService(el.target.value)}></input> Exahust Service</div>
-                <div><input type="checkbox" name="fuelfilter_replacement" id="true" value={fuelfilterReplacement} onChange={(el) => setFuelfilterReplacement(el.target.value)}></input> Fuelfilter Replacement</div>
+                <div><input type="checkbox" name="fuelfilter_replacement" id="true" value={fuelfilterReplacement} onChange={(el) => setFuelfilterReplacement(el.target.value)}></input> Fuel Filter Replacement</div>
                 <div><input type="checkbox" name="mechanical_investigation" id="true" value={mechanicalInvestigation} onChange={(el) => setMechanicalInvestigation(el.target.value)}></input> Mechanical Investigation</div>
                 <div><input type="checkbox" name="oil_change" id="true" value={oilChange} onChange={(el) => setOilChange(el.target.value)}></input> Oil Change</div>
                 <div><input type="checkbox" name="powersteering_service" id="true" value={powersteeringService} onChange={(el) => setPowersteeringService(el.target.value)}></input> Powersteering Service</div>
@@ -140,7 +140,7 @@ const ServiceForm = (props) => {
                 <div><input type="checkbox" name="tire_repair" id="true" value={tireRepair} onChange={(el) => setTireRepair(el.target.value)}></input> Tire Repair</div>
                 <div><input type="checkbox" name="tire_replacement" id="true" value={tireReplacement} onChange={(el) => setTireReplacement(el.target.value)}></input> Tire Replacement</div>
                 <div><input type="checkbox" name="tire_rotation" id="true" value={tireRotation} onChange={(el) => setTireRotation(el.target.value)}></input> Tire Rotation</div>
-                <div><input type="checkbox" name="transfercase_service" id="true" value={transfercaseService} onChange={(el) => setTransfercaseService(el.target.value)}></input> Transfercase Service</div>
+                <div><input type="checkbox" name="transfercase_service" id="true" value={transfercaseService} onChange={(el) => setTransfercaseService(el.target.value)}></input> Transfer Case Service</div>
                 <div><input type="checkbox" name="transmission_service" id="true" value={transmissionService} onChange={(el) => setTransmissionService(el.target.value)}></input> Transmission Service</div>
                 <div><input type="checkbox" name="wiperblade_replacement" id="true" value={wiperbladeReplacement} onChange={(el) => setWiperbladeReplacement(el.target.value)}></input> Wiperbalde Replacement</div>
                 <div><input name="major_repairs" type="text" value={majorRepairs} placeholder="Major Repairs?" onChange={(el) => setMajorRepairs(el.target.value)}></input> </div>

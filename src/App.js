@@ -12,6 +12,7 @@ import LandingPage from "./Components/LandingPage/LandingPage";
 function App() {
   const [user, setUser] = useState(null);
   const [userInfo, setUserInfo] = useState([]);
+  const [serviceInfo, setServiceInfo] = useState([]);
 
   async function login(username, password) {
     await axios({
@@ -72,6 +73,15 @@ function App() {
     });
   }
 
+  async function add_service(vehicleInfo) {
+    const jwt = localStorage.getItem("token");
+    await axios({
+      method: "post",
+      url: "http://127.0.0.1:8000/api/service_logs/addservice/",
+      headers: { Authorization: "Bearer " + jwt },
+      data: serviceInfo
+    });
+  }
 
   return (
     <div>

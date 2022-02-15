@@ -8,7 +8,8 @@ const LandingPage = (props) => {
             <div>
                 <Link to="/login">
                     <button type="button">Log In</button></Link> or <Link to="/Register">Register</Link> here
-                    <ServiceForm/>
+                    <div>
+                    <ServiceForm add_service={props.add_service}/></div>
             </div>
         </div>
 

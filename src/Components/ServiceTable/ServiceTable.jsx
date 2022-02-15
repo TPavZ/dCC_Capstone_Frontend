@@ -12,11 +12,11 @@ function determineColor(status) {
         return "secondary"
     }
 }
-
-    return (
+ /* add enrty number... Entry #{serivce_id} */
+    return ( 
         <ListGroup>
             <ListGroup.Item><strong>Vehicle: 1991 Toyota Hilux | Milage: 38,456 | Service Date: 07-24-2021 | Shop: O'Reilly Motor Cars</strong></ListGroup.Item>
-            <ListGroup.Item variant={determineColor(props.service.battery_service)}>Battery Service</ListGroup.Item>
+            {/* <ListGroup.Item variant={determineColor(props.service.battery_service)}>Battery Service</ListGroup.Item> */}
             <ListGroup.Item variant="secondary">Brake Fluid Service</ListGroup.Item>
             <ListGroup.Item variant="success">Front Brakes</ListGroup.Item>
             <ListGroup.Item variant="danger">Rear Brakes</ListGroup.Item>

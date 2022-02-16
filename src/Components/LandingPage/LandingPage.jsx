@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
-
+import "./LandingPage.css"
+import Button from "react-bootstrap/Button";
 
 const LandingPage = (props) => {
     return (
@@ -7,7 +8,7 @@ const LandingPage = (props) => {
             <p4>Hello Welcome To the Page</p4>
             <div>
                 <Link to="/login">
-                    <button type="button">Log In</button></Link> or <Link to="/Register">Register</Link> here
+                    <Button type="button" variant="outline-dark">Log In</Button></Link> or <Link to="/Register">Register</Link> here
             </div>
         </div>
 

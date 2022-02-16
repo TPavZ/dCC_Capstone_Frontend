@@ -98,7 +98,7 @@ function App() {
         <Route path="" element={<LandingPage add_service={add_service} />} />
         <Route path="login" element={<LoginForm login={login} />} />
         <Route path="register" element={<RegistForm register={register} />} />
-        <Route Path="dashboard" element={<UserDashBoard />} />
+        <Route path="dashboard" element={<UserDashBoard />} />
       </Routes>
     </div>
   );

@@ -12,9 +12,9 @@ const UserDashBoard = (props) => {
     return (
         <div>
             <h1>OK</h1>
-            {/* <VehicleForm add_vehicle={props.add_vehicle} /> */}
-            {/* <ServiceForm add_service={props.add_service} /> */}
-            {/* <PDFPrinter /> */}
+            <VehicleForm add_vehicle={props.add_vehicle} />
+            <ServiceForm add_service={props.add_service} />
+            <PDFPrinter />
         </div>
     );
 }

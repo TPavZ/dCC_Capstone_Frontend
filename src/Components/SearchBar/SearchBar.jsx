@@ -4,14 +4,14 @@ import { useState } from "react"
 const SearchBar = (props) => {
     const [searchTerm, setSearchTerm] = useState("")
 
-    function handleSubmit(el) {
-        el.preventDefault();
+    function handleSubmit(e) {
+        e.preventDefault();
         props.filter(searchTerm);
     }
 
     return (
         <form onSubmit={handleSubmit} className="search-bar">
-            <input type="search" placeholder="Search" value={searchTerm} onChange={(el) => setSearchTerm(el.target.value)} />
+            <input type="search" placeholder="Search" value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)} />
             <button type="submit" variant="outline-dark">Search</button>
         </form>
     );

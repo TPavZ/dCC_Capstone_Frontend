@@ -7,8 +7,8 @@ const LoginForm = (props) => {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
 
-    function handleSubmit(el) {
-        el.preventDefault();
+    function handleSubmit(e) {
+        e.preventDefault();
         props.login(username, password);
     }
 
@@ -19,10 +19,10 @@ const LoginForm = (props) => {
             <p4>Please Login To Continue</p4>
             <form onSubmit={handleSubmit}>
                 <div className="username">
-                    <input type="text" value={username} placeholder="Username" onChange={(el) => setUsername(el.target.value)}></input>
+                    <input type="text" value={username} placeholder="Username" onChange={(e) => setUsername(e.target.value)}></input>
                 </div>
                 <div className="password">
-                    <input type="password" value={password} placeholder="Password" onChange={(el) => setPassword(el.target.value)}></input>
+                    <input type="password" value={password} placeholder="Password" onChange={(e) => setPassword(e.target.value)}></input>
                 </div>
                 <div>
                     <Link to="/dashboard">

@@ -18,7 +18,7 @@ const ReplyForm = (props) => {
     return (
         <div>
             <form onSubmit={handleSubmit}>
-                <input type="text" placeholder="Reply..." value={reply} onChange={(el) => setReply(el.target.value)}></input>
+                <input type="text" placeholder="Reply..." value={reply} onChange={(e) => setReply(e.target.value)}></input>
                 <button type="submit">Reply</button>
             </form>
         </div>

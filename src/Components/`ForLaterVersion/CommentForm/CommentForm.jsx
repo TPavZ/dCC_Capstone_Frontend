@@ -18,7 +18,7 @@ const CommentForm = (props) => {
     return (
         <div>
             <form onSubmit={handleSubmit}>
-                <input type="text" placeholder="Comment..." value={comment} onChange={(el) => setComment(el.target.value)}></input>
+                <input type="text" placeholder="Comment..." value={comment} onChange={(e) => setComment(e.target.value)}></input>
                 <button type="submit">Comment</button>
             </form>
         </div>

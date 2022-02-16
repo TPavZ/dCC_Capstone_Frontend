@@ -10,9 +10,6 @@ export class PDFPrintForm extends React.PureComponent {
 
   canvasEl;
 
-  handleCheckboxOnChange = () =>
-    this.setState({ checked: !this.state.checked });
-
   setRef = (ref) => (this.canvasEl = ref);
 
   render() {

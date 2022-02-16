@@ -19,7 +19,9 @@ const LoginForm = (props) => {
                 <input type="password" value={password} placeholder="Password" onChange={(el) => setPassword(el.target.value)}></input>
             </div>
             <div>
-                <button type="submit" onClick={handleSubmit}>Log In</button>
+                <Link to="/dashboard">
+                    <button type="submit" onClick={handleSubmit}>Log In</button>
+                </Link>
             </div>
             <div className="back-button">
                 <Link to="/">
@@ -28,7 +30,6 @@ const LoginForm = (props) => {
             </div>
         </form>
     );
-
 }
 
 export default LoginForm;

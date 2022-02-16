@@ -41,31 +41,6 @@ const ServiceForm = (props) => {
         setCurrentMileage("");
         setServiceGrandTotal("");
         setServiceDate("");
-        setBatteryService("");
-        setBrakefluidService("");
-        setBrakefrontService("");
-        setBrakerearService("");
-        setBulbReplacement("");
-        setCabinfilterReplacement("");
-        setCoolantService("");
-        setDifferentialService("");
-        setDrivebeltReplacement("");
-        setElectricalInvestigation("");
-        setEnginefilterReplacement("");
-        setExahustService("");
-        setFuelfilterReplacement("");
-        setMechanicalInvestigation("");
-        setOilChange("");
-        setPowersteeringService("");
-        setSparkplugService("");
-        setSteeringRepair("");
-        setSuspensionRepair("");
-        setTireRepair("");
-        setTireReplacement("");
-        setTireRotation("");
-        setTransfercaseService("");
-        setTransmissionService("");
-        setWiperbladeReplacement("");
         setMajorRepairs("");
         setOtherServices("");
         setServiceDetails("");
@@ -107,12 +82,13 @@ const ServiceForm = (props) => {
             "service_details": serviceDetails,
         }
         props.add_service(vehicleInfo);
+        document.getElementById("service-form2").reset();
         resetForm();
     }
 
     return (
         <div className="service-form">
-            <form>
+            <form id="service-form2">
                 <label><strong>Service Logger Entry</strong></label>
                 <div><input name="current_mileage" type="text" value={currentMileage} placeholder="Mileage When Serviced" onChange={(el) => setCurrentMileage(el.target.value)}></input> </div>
                 <div><input name="service_grand_total" type="text" value={serviceGrandTotal} placeholder="Total Repair Cost" onChange={(el) => setServiceGrandTotal(el.target.value)}></input> </div>

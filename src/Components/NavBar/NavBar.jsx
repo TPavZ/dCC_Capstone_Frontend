@@ -19,13 +19,17 @@ const NavBar = (props) => {
                 <Navbar.Toggle aria-controls="navbarScroll" />
                 <Navbar.Collapse id="navbarScroll">
                     <Nav
-                        className="me-auto my-2 my-lg-0" 
+                        className="me-auto my-2 my-lg-0"
                         style={{ maxHeight: '100px' }}
                         navbarScroll>
                         <div className="button-options">
-                            <Link to="/login" ><button type="button">Log In</button></Link>
-                            <Link to="/Register" ><button type="button">Register</button></Link>
-                            <Link to="/" ><button type="button">Home</button></Link>
+                            {props.user && <button type="button" onClick={() => props.logout()}>Log Out</button>}
+                            {!props.user &&
+                                <>
+                                    <Link to="/login" ><button type="button">Log In</button></Link>
+                                    <Link to="/Register" ><button type="button">Register</button></Link>
+                                    {/* <Link to="/" ><button type="button">Home</button></Link> */}
+                                </>}
                         </div>
                     </Nav>
                 </Navbar.Collapse>

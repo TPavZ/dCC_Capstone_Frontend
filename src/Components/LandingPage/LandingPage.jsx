@@ -1,7 +1,5 @@
 import { Link } from "react-router-dom";
-import ServiceForm from "../ServiceForm/ServiceForm";
-import { PDFPrintForm } from "../PDFPrintForm/PDFPrintForm";
-import { PDFPrinter } from "../PDFPrinter/PDFPrinter";
+
 
 const LandingPage = (props) => {
     return (
@@ -10,8 +8,6 @@ const LandingPage = (props) => {
             <div>
                 <Link to="/login">
                     <button type="button">Log In</button></Link> or <Link to="/Register">Register</Link> here
-                    <div><PDFPrinter /></div>
-                    <div><ServiceForm add_service={props.add_service}/></div>
             </div>
         </div>
 

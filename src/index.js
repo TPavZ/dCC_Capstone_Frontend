@@ -6,5 +6,4 @@ import App from './App.js';
 ReactDOM.render(
     <Router>
         <App />
-    </Router>,
-    document.getElementById('fromindexjs'));
+    </Router>, document.getElementById('fromindexjs'));

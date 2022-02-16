@@ -1,11 +1,11 @@
 import LoginForm from "./Components/LoginForm/LoginForm";
 import RegistForm from "./Components/RegistForm/RegistForm";
 import NavBar from "./Components/NavBar/NavBar";
-import ServiceTable from "./Components/ServiceTable/ServiceTable";
-import VehicleForm from "./Components/VehicleForm/VehicleForm";
-import { Route, Routes } from "react-router-dom";
-import { PDFPrintForm } from "./Components/PDFPrintForm/PDFPrintForm";
+import UserDashBoard from "./Components/UserDashBoard/UserDashBoard";
+/* import ServiceTable from "./Components/ServiceTable/ServiceTable"; */
 
+/* import { PDFPrintForm } from "./Components/PDFPrintForm/PDFPrintForm"; */
+import { Route, Routes } from "react-router-dom";
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import LandingPage from "./Components/LandingPage/LandingPage";
@@ -14,6 +14,11 @@ function App() {
   const [user, setUser] = useState(null);
   const [userInfo, setUserInfo] = useState([]);
   const [serviceInfo, setServiceInfo] = useState([]);
+
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    setUser(token);
+  }, [])
 
   async function login(username, password) {
     await axios({
@@ -26,10 +31,10 @@ function App() {
       }
     }).then(response => {
       localStorage.setItem("token", response.data.access);
-      window.location = "/";
+      window.location = "/dashboard";
     }
     ).catch(error => {
-      alert("Incorrect username or password. Please try again.")
+      alert("Incorrect username or password. Please try again.");
     });
   }
 
@@ -43,12 +48,12 @@ function App() {
       }).then(response => {
         setUserInfo(response.data);
       })
-    }
-  
-    async function logout() {
-      localStorage.removeItem("token");
-      window.location = "/";
     } */
+
+  async function logout() {
+    localStorage.removeItem("token");
+    window.location = "/";
+  }
 
   async function register(userInfo) {
     await axios({
@@ -68,13 +73,15 @@ function App() {
     const jwt = localStorage.getItem("token");
     await axios({
       method: "post",
-      url: "http://127.0.0.1:8000/api/vehicles/",
+      url: "http://127.0.0.1:8000/api/vehicles/addvehicle/",
       headers: { Authorization: "Bearer " + jwt },
       data: vehicleInfo
+    }).then(response => {
+      window.location = "/dashboard";
     });
   }
 
-  async function add_service(vehicleInfo) {
+  async function add_service(serviceInfo) {
     const jwt = localStorage.getItem("token");
     await axios({
       method: "post",
@@ -86,13 +93,13 @@ function App() {
 
   return (
     <div>
-      <NavBar />
+      <NavBar user={user} logout={logout} />
       <Routes>
-        <Route path="" element={<LandingPage />} />
+        <Route path="" element={<LandingPage add_service={add_service} />} />
         <Route path="login" element={<LoginForm login={login} />} />
         <Route path="register" element={<RegistForm register={register} />} />
+        <Route Path="dashboard" element={<UserDashBoard />} />
       </Routes>
-      {/* <VehicleForm add_vehicle={add_vehicle} /> */}
     </div>
   );
 }

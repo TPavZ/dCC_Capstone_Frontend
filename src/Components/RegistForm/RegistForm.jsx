@@ -89,7 +89,9 @@ const RegistForm = (props) => {
                 </div>
             }
             <div>
-                <button type="submit" onClick={handleSubmit}>Register</button>
+                <Link to="/dashboard">
+                    <button type="submit" onClick={handleSubmit}>Register</button>
+                </Link>
             </div>
             <div className="back-button">
                 <Link to="/">

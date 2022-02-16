@@ -1,3 +1,6 @@
+import { Link } from "react-router-dom";
+import React, { useState } from "react"
+
 const VehicleEdit = (props) => {
     const [vin, setVin] = useState(props.vehicle.vin);
     const [year, setYear] = useState(props.vehicle.year);
@@ -43,7 +46,7 @@ const VehicleEdit = (props) => {
 return (
     <div>
         <form onSubmit={handleSubmit} className="vehicle-form">
-            <label><strong>Add Vehicle</strong></label>
+            <label><strong>Edit Vehicle</strong></label>
             <input name="vin" type="text" onChange={(e) => setVin(e.target.value)} value={vin} placeholder="VIN Number"></input>
             <input name="year" type="text" onChange={(e) => setYear(e.target.value)} value={year} placeholder="Year"></input>
             <input name="make" type="text" onChange={(e) => setMake(e.target.value)} value={make} placeholder="Make"></input>

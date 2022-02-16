@@ -4,19 +4,19 @@ import { Table, Button } from "react-bootstrap";
 import VehicleEdit from "../VehicleEdit/VehicleEdit";
 
 const VehicleTable = (props) => {
-    
+
     const [showForm, setShowForm] = useState(false);
     const [editedVehicle, setEditedVehicle] = useState("")
-    const [vehicles, setVehicles ] = useState([])
+    const [vehicles, setVehicles] = useState([])
 
     console.log(showForm);
 
     useEffect(() => {
         getUserVehicles()
-    },[])
+    }, [])
 
     async function getUserVehicles() {
-        let response = await axios.get ();
+        let response = await axios.get();
         // response into state variable
         setVehicles(response.data);
     }
@@ -62,7 +62,7 @@ const VehicleTable = (props) => {
                 </tbody>
             </Table>
 
-            {showForm && <VehicleEdit editedVehicle={editedVehicle} editedVehicle={props.editedVehicle} setShowForm={setShowForm}/>}
+            {showForm && <VehicleEdit editedVehicle={editedVehicle} editedVehicle={props.editedVehicle} setShowForm={setShowForm} />}
         </>
     );
 }

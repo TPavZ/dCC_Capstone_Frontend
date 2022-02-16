@@ -84,6 +84,15 @@ function App() {
     });
   }
 
+  async function get_user_vehicles() {
+    const jwt = localStorage.getItem("token");
+    await axios({
+      method: "get",
+      url: "http://127.0.0.1:8000/vehicles/${id}/",
+      headers: { Authorization: "Bearer " + jwt }
+    });
+  }
+
   async function editVehicle(id, updatedVehicle) {
     let response = await axios.put(`http://127.0.0.1:8000/???/${id}/`, updatedVehicle);
   }
@@ -109,7 +118,7 @@ function App() {
         <Route path="" element={<LandingPage add_service={add_service} />} />
         <Route path="login" element={<LoginForm login={login} />} />
         <Route path="register" element={<RegistForm register={register} />} />
-        <Route path="dashboard" element={<UserDashBoard />} />
+        <Route path="dashboard" element={<UserDashBoard get_user_vehicles={get_user_vehicles} />} />
         <Route path="addlog" element={<ServiceForm add_service={add_service} />} />
         <Route path="addvehicle" element={<VehicleForm add_vehicle={add_vehicle} />}></Route>
       </Routes>

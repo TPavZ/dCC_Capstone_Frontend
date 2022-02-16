@@ -20,7 +20,7 @@ const UserDashBoard = (props) => {
                 - Display total $ across all service logs.</h1>
             <Link to="/addlog" ><Button type="button" variant="outline-dark">Add Service Log</Button></Link>
             <Link to="/addvehicle" ><Button type="button" variant="outline-dark">Add A New Vehicle</Button></Link>
-            <VehicleTable /* getUserVehicles={getUserVehicles} */ />
+            <VehicleTable get_user_vehicles={props.get_user_vehicles} />
             {/* <PDFPrinter /> */}
         </div>
     );

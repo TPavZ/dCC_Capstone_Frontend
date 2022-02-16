@@ -88,7 +88,7 @@ function App() {
     const jwt = localStorage.getItem("token");
     await axios({
       method: "get",
-      url: "http://127.0.0.1:8000/vehicles/${id}/",
+      url: `http://127.0.0.1:8000/vehicles/${user.id}/`,
       headers: { Authorization: "Bearer " + jwt }
     });
   }

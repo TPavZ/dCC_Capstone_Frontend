@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Link } from "react-router-dom";
 /* I would like to have a drop down to select vehicle for users vehicle list
 have input  for milage, shop used and total repair cost.  
 have a checkbox for the services
@@ -123,6 +124,9 @@ const ServiceForm = (props) => {
                 <div><input name="other_services" type="text" value={otherServices} placeholder="Other Services?" onChange={(el) => setOtherServices(el.target.value)}></input> </div>
                 <div><input name="service_details" type="text" value={serviceDetails} placeholder="Service Details..." onChange={(el) => setServiceDetails(el.target.value)}></input> </div>
                 <button type="submit" onClick={handleSubmit}>Log It!</button>
+                <Link to="/dashboard">
+                    <button type="button" variant="outline-dark">Back</button>
+                </Link>
             </form>
         </div>
     );

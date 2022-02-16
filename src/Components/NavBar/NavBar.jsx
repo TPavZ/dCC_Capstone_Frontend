@@ -3,6 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { Navbar, Container, Nav } from "react-bootstrap";
 import "./NavBar.css"
 import { Link } from "react-router-dom";
+import Button from "react-bootstrap/Button";
 
 
 const NavBar = (props) => {
@@ -23,11 +24,11 @@ const NavBar = (props) => {
                         style={{ maxHeight: '100px' }}
                         navbarScroll>
                         <div className="button-options">
-                            {props.user && <button type="button" onClick={() => props.logout()}>Log Out</button>}
+                            {props.user && <Button type="button" variant="outline-dark" onClick={() => props.logout()}>Log Out</Button>}
                             {!props.user &&
                                 <>
-                                    <Link to="/login" ><button type="button">Log In</button></Link>
-                                    <Link to="/Register" ><button type="button">Register</button></Link>
+                                    <Link to="/login" ><Button type="button" variant="outline-dark">Log In</Button></Link>
+                                    <Link to="/Register" ><Button type="button" variant="outline-dark">Register</Button></Link>
                                     {/* <Link to="/" ><button type="button">Home</button></Link> */}
                                 </>}
                         </div>

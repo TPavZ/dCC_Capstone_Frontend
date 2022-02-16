@@ -1,4 +1,5 @@
 import React, { useState } from "react"
+import { Link } from "react-router-dom";
 
 const VehicleForm = (props) => {
     const [vin, setVin] = useState("");
@@ -80,6 +81,9 @@ const VehicleForm = (props) => {
                     <option value="Other">Other</option>
                 </select>
                 <button type="submit" onClick={handleSubmit}>Submit</button>
+                <Link to="/dashboard">
+                    <button type="button" variant="outline-dark">Back</button>
+                </Link>
             </form>
         </div>
     );

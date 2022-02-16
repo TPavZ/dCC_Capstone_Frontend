@@ -1,6 +1,20 @@
 .welcome {
+    text-align: center;
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    /* color: white; */
 }
+
+/* body {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(255, 255, 255, 0.5)), url("../Images/jack-anstey-zS4lUqLEiNA-unsplash.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;    
+} */
+
+/* .welcome a {
+    color: aqua;
+} */

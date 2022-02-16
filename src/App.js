@@ -2,13 +2,16 @@ import LoginForm from "./Components/LoginForm/LoginForm";
 import RegistForm from "./Components/RegistForm/RegistForm";
 import NavBar from "./Components/NavBar/NavBar";
 import UserDashBoard from "./Components/UserDashBoard/UserDashBoard";
-/* import ServiceTable from "./Components/ServiceTable/ServiceTable"; */
+import ServiceForm from "./Components/ServiceForm/ServiceForm";
+import LandingPage from "./Components/LandingPage/LandingPage";
+import VehicleForm from "./Components/VehicleForm/VehicleForm";
 
 /* import { PDFPrintForm } from "./Components/PDFPrintForm/PDFPrintForm"; */
 import { Route, Routes } from "react-router-dom";
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import LandingPage from "./Components/LandingPage/LandingPage";
+
+
 
 function App() {
   const [user, setUser] = useState(null);
@@ -81,6 +84,14 @@ function App() {
     });
   }
 
+  async function editVehicle(id, updatedVehicle) {
+    let response = await axios.put(`http://127.0.0.1:8000/???/${id}/`, updatedVehicle);
+  }
+
+  async function deleteVehicle(id) {
+    let response = await axios.delete(`http://127.0.0.1:8000/???/${id}/`);
+  }
+
   async function add_service(serviceInfo) {
     const jwt = localStorage.getItem("token");
     await axios({
@@ -99,6 +110,8 @@ function App() {
         <Route path="login" element={<LoginForm login={login} />} />
         <Route path="register" element={<RegistForm register={register} />} />
         <Route path="dashboard" element={<UserDashBoard />} />
+        <Route path="addlog" element={<ServiceForm add_service={add_service} />} />
+        <Route path="addvehicle" element={<VehicleForm add_vehicle={add_vehicle} />}></Route>
       </Routes>
     </div>
   );

@@ -14,6 +14,9 @@ const LoginForm = (props) => {
 
     return (
         <div className="login-form">
+            <p4>Welcome Back To <strong>Service Logger</strong></p4>
+            <br />
+            <p4>Please Login To Continue</p4>
             <form onSubmit={handleSubmit}>
                 <div className="username">
                     <input type="text" value={username} placeholder="Username" onChange={(el) => setUsername(el.target.value)}></input>
@@ -28,6 +31,9 @@ const LoginForm = (props) => {
                     <Link to="/">
                         <Button type="button" variant="outline-dark">Back</Button>
                     </Link>
+                    <div>
+                        no account? <Link to="/Register">Register</Link> here
+                    </div>
                 </div>
             </form>
         </div>

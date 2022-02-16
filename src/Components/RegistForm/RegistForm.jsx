@@ -49,6 +49,7 @@ const RegistForm = (props) => {
 
     return (
         <div className="regist-form">
+            <p4>Create Your Very Own Account!</p4>
             <form onSubmit={handleSubmit}>
                 <div className="inputs">
                     <input type="text" value={firstName} placeholder="First Name" onChange={(el) => setFirstName(el.target.value)}></input>

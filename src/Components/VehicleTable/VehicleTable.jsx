@@ -54,7 +54,7 @@ const VehicleTable = (props) => {
                                 <td>{vehicle.drive_type}</td>
                                 <td>{vehicle.fuel_type}</td>
                                 <td>{vehicle.vin}</td>
-                                <td><Button type="button" variant="outline-dark" onClick={() => navigateServiceForm(vehicle)}>Add Log</Button><Link to="/viewlogs" ><Button type="button" variant="outline-dark">View Logs</Button></Link><Button type="submit" variant="outline-dark" onClick={() => navigateVehicleEdit(vehicle.id)}>Edit</Button><Button type="submit" variant="outline-dark" onClick={() => props.delete_vehicle(vehicle.id)}>Delete</Button></td>
+                                <td><Button type="button" variant="outline-dark" onClick={() => navigateServiceForm(vehicle)}>Add Log</Button><Link to="/viewlogs" ><Button type="button" variant="outline-dark">View Logs</Button></Link><Button type="submit" variant="outline-dark" onClick={() => navigateVehicleEdit(vehicle)}>Edit</Button><Button type="submit" variant="outline-dark" onClick={() => props.delete_vehicle(vehicle.id)}>Delete</Button></td>
 
                             </tr>
                         );

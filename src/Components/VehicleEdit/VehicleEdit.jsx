@@ -52,10 +52,10 @@ const VehicleEdit = (props) => {
             setMake(state.make)
             setModel(state.model)
             setTrim(state.trim)
-            setEngineSize(state.engineSize)
-            setTransmissionType(state.transmissionType)
-            setDriveType(state.driveType)
-            setFuelType(state.fuelType)
+            setEngineSize(state.engine_size)
+            setTransmissionType(state.transmission_type)
+            setDriveType(state.drive_type)
+            setFuelType(state.fuel_type)
         }
     }, [state])
 
@@ -69,7 +69,7 @@ const VehicleEdit = (props) => {
                 <input name="model" type="text" onChange={(e) => setModel(e.target.value)} value={model} placeholder="Model"></input>
                 <input name="trim" type="text" onChange={(e) => setTrim(e.target.value)} value={trim} placeholder="Trim"></input>
                 <select id="dropdown" name="engine_size" type="text" onChange={(e) => setEngineSize(e.target.value)} value={engineSize}>
-                    <option placeholder="engine_size">Engine Size</option>
+                    <option placeholder="engine_size">{engineSize}</option>
                     <option value="4 Cylinder">4 Cylinder</option>
                     <option value="6 Cylinder">6 Cylinder</option>
                     <option value="8 Cylinder">8 Cylinder</option>
@@ -78,20 +78,20 @@ const VehicleEdit = (props) => {
                     <option value="Other">Other</option>
                 </select>
                 <select id="dropdown" name="transmission_type" type="text" onChange={(e) => setTransmissionType(e.target.value)} value={transmissionType}>
-                    <option placeholder="transmission_type">Transmission</option>
+                    <option placeholder="transmission_type">{transmissionType}</option>
                     <option value="Automatic">Automatic</option>
                     <option value="Manual">Manual</option>
                     <option value="CVT">CVT</option>
                 </select>
                 <select id="dropdown" name="drive_type" type="text" onChange={(e) => setDriveType(e.target.value)} value={driveType}>
-                    <option placeholder="drive_type">Drive Type</option>
+                    <option placeholder="drive_type">{driveType}</option>
                     <option value="AWD">AWD</option>
                     <option value="4WD">4WD</option>
                     <option value="FWD">FWD</option>
                     <option value="RWD">RWD</option>
                 </select>
                 <select id="dropdown" name="fuel_type" type="text" onChange={(e) => setFuelType(e.target.value)} value={fuelType}>
-                    <option placeholder="fuel_type">Fuel Type</option>
+                    <option placeholder="fuel_type">{fuelType}</option>
                     <option value="Petrol">Petrol</option>
                     <option value="Diesel">Diesel</option>
                     <option value="Electric">Electric</option>

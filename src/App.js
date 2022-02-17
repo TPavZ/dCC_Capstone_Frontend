@@ -6,7 +6,6 @@ import ServiceForm from "./Components/ServiceForm/ServiceForm";
 import LandingPage from "./Components/LandingPage/LandingPage";
 import VehicleForm from "./Components/VehicleForm/VehicleForm";
 import VehicleEdit from "./Components/VehicleEdit/VehicleEdit";
-import ServiceTable from "./Components/ServiceTable/ServiceTable";
 import { PDFPrinter } from "./Components/PDFPrinter/PDFPrinter";
 
 /* import { PDFPrintForm } from "./Components/PDFPrintForm/PDFPrintForm"; */
@@ -132,7 +131,7 @@ function App() {
     debugger
     await axios({
       method: "put",
-      url: `http://127.0.0.1:8000/api/vehicles/edit/${vehicle}/`,
+      url: `http://127.0.0.1:8000/api/vehicles/edit/${vehicle.id}/`,
       headers: {
         Authorization: "Bearer " + jwt
       },

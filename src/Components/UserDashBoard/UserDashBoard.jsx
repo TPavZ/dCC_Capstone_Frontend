@@ -7,7 +7,7 @@ import VehicleTable from "../VehicleTable/VehicleTable";
 const UserDashBoard = (props) => { 
     return (
         <div>
-            <h1>- Welcome message with logged in users name. <br />
+            <h1>? Welcome message with logged in users name. <br />
                 ✓ Button to add new service log. <br />
                 ✓ Buttton to add new vehicle. <br />
                 - Area to select a vehicle and see all logs for it. <br />

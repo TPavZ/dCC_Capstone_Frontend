@@ -16,7 +16,7 @@ export class PDFPrintForm extends React.PureComponent {
     const { text } = this.props;
 
     return (
-      <ServiceTable get_user_services={props.get_user_services} get_user_vehicle_services={props.get_user_vehicle_services}/>
+      <ServiceTable get_user_services={this.props.get_user_services} get_user_vehicle_services={this.props.get_user_vehicle_services} user={this.props.user}/>
     );
   }
 }

@@ -2,6 +2,7 @@ import Button from "react-bootstrap/Button";
 import * as React from "react";
 import ReactToPrint from "react-to-print";
 import { PDFPrintForm } from "../PDFPrintForm/PDFPrintForm";
+import { useState, useEffect } from "react"
 
 export class PDFPrinter extends React.PureComponent {
   componentRef = null;
@@ -71,7 +72,7 @@ export class PDFPrinter extends React.PureComponent {
         {this.state.isLoading && (
           <p className="indicator">Magic Is Happening...</p>
         )}
-        <PDFPrintForm ref={this.setComponentRef} text={this.state.text} />
+        <PDFPrintForm get_user_services={this.props.get_user_services} get_user_vehicle_services={this.props.get_user_vehicle_services} user={this.props.user} ref={this.setComponentRef} text={this.state.text} />
       </div>
     );
   }

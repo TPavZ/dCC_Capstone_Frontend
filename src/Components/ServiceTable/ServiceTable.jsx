@@ -89,32 +89,61 @@ const ServiceTable = (props) => {
         });
     }
 
-    /* add enrty number... Entry #{serivce_id} */
-    return (
-        <div>
-            {colors && colors.length > 0 && colors.map((service, index) => {
-                return (
-                    <ListGroup>
-                        <ListGroup.Item><strong>Vehicle: { } | Milage: { } | Service Date: { } | Shop: { }</strong></ListGroup.Item>
-                        <ListGroup.Item variant={service.battery_service}>Battery Service</ListGroup.Item>
-                        <ListGroup.Item variant={service.brakefluid_service}>Brake Fluid Service</ListGroup.Item>
-                        <ListGroup.Item variant="success">Front Brakes</ListGroup.Item>
-                        <ListGroup.Item variant="secondary">Rear Brakes</ListGroup.Item>
-                        <ListGroup.Item variant="secondary">Bulb Replacement</ListGroup.Item>
-                        <ListGroup.Item variant="secondary">Cabin Filter Replacement</ListGroup.Item>
-                        <ListGroup.Item variant="success">Coolant Service</ListGroup.Item>
-                        <ListGroup.Item variant="success">Differentail Service</ListGroup.Item>
-                        <ListGroup.Item variant="success">Drive Belt Replacement</ListGroup.Item>
-                        <ListGroup.Item><strong>Other Services: { } </strong></ListGroup.Item>
-                        <ListGroup.Item><strong>Details: { } </strong></ListGroup.Item>
-                        <ListGroup.Item><strong>Service Total: { } </strong></ListGroup.Item>
-                    </ListGroup>
-                );
-            })}
+    if (window.location.href.includes('viewvehiclelogs')) {
+        return (
+            <div>
+                {colorsVehicle && colorsVehicle.length > 0 && colorsVehicle.map((service, index) => {
+                    return (
+                        <ListGroup>
+                            <ListGroup.Item><strong>Vehicle: { } | Milage: { } | Service Date: { } | Shop: { }</strong></ListGroup.Item>
+                            <ListGroup.Item variant={service.battery_service}>Battery Service</ListGroup.Item>
+                            <ListGroup.Item variant={service.brakefluid_service}>Brake Fluid Service</ListGroup.Item>
+                            <ListGroup.Item variant="success">Front Brakes</ListGroup.Item>
+                            <ListGroup.Item variant="secondary">Rear Brakes</ListGroup.Item>
+                            <ListGroup.Item variant="secondary">Bulb Replacement</ListGroup.Item>
+                            <ListGroup.Item variant="secondary">Cabin Filter Replacement</ListGroup.Item>
+                            <ListGroup.Item variant="success">Coolant Service</ListGroup.Item>
+                            <ListGroup.Item variant="success">Differentail Service</ListGroup.Item>
+                            <ListGroup.Item variant="success">Drive Belt Replacement</ListGroup.Item>
+                            <ListGroup.Item><strong>Other Services: { } </strong></ListGroup.Item>
+                            <ListGroup.Item><strong>Details: { } </strong></ListGroup.Item>
+                            <ListGroup.Item><strong>Service Total: { } </strong></ListGroup.Item>
+                        </ListGroup>
+                    );
+                })}
 
-            <Link to="/dashboard"><Button type="Button" variant="outline-dark">Back</Button></Link>
-        </div>
-    );
+                <Link to="/dashboard"><Button type="Button" variant="outline-dark">Back</Button></Link>
+            </div>
+        );
+    }
+    else {
+        return (
+            <div>
+                {colors && colors.length > 0 && colors.map((service, index) => {
+                    return (
+                        <ListGroup>
+                            <ListGroup.Item><strong>Vehicle: { } | Milage: { } | Service Date: { } | Shop: { }</strong></ListGroup.Item>
+                            <ListGroup.Item variant={service.battery_service}>Battery Service</ListGroup.Item>
+                            <ListGroup.Item variant={service.brakefluid_service}>Brake Fluid Service</ListGroup.Item>
+                            <ListGroup.Item variant="success">Front Brakes</ListGroup.Item>
+                            <ListGroup.Item variant="secondary">Rear Brakes</ListGroup.Item>
+                            <ListGroup.Item variant="secondary">Bulb Replacement</ListGroup.Item>
+                            <ListGroup.Item variant="secondary">Cabin Filter Replacement</ListGroup.Item>
+                            <ListGroup.Item variant="success">Coolant Service</ListGroup.Item>
+                            <ListGroup.Item variant="success">Differentail Service</ListGroup.Item>
+                            <ListGroup.Item variant="success">Drive Belt Replacement</ListGroup.Item>
+                            <ListGroup.Item><strong>Other Services: { } </strong></ListGroup.Item>
+                            <ListGroup.Item><strong>Details: { } </strong></ListGroup.Item>
+                            <ListGroup.Item><strong>Service Total: { } </strong></ListGroup.Item>
+                        </ListGroup>
+                    );
+                })}
+
+                <Link to="/dashboard"><Button type="Button" variant="outline-dark">Back</Button></Link>
+            </div>
+        );
+    }
+
 }
 
 export default ServiceTable;

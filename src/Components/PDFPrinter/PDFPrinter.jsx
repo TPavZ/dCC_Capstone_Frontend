@@ -3,7 +3,6 @@ import * as React from "react";
 import ReactToPrint from "react-to-print";
 import { PDFPrintForm } from "../PDFPrintForm/PDFPrintForm";
 import { useState, useEffect } from "react"
-import { useLocation } from "react-router-dom";
 
 export class PDFPrinter extends React.PureComponent {
 
@@ -11,9 +10,6 @@ export class PDFPrinter extends React.PureComponent {
 
   constructor(props) {
     super(props);
-    this.vehicle = {
-
-    }
     this.state = {
       isLoading: false,
       text: "old boring text"

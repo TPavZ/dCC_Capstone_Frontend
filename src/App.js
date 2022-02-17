@@ -180,7 +180,7 @@ function App() {
     <div>
       <NavBar user={user} logout={logout} />
       <Routes>
-        <Route path="" element={<LandingPage add_service={add_service} />} />
+        <Route exact path="" element={<LandingPage add_service={add_service} />} />
         <Route path="login" element={<LoginForm login={login} />} />
         <Route path="register" element={<RegistForm register={register} />} />
         <Route path="dashboard" element={<UserDashBoard get_selected_vehicle={get_selected_vehicle} user={user} get_user_services={get_user_services} get_user_vehicles={get_user_vehicles} vehicles={vehicles} delete_vehicle={delete_vehicle} />} />
@@ -188,7 +188,7 @@ function App() {
         <Route path="addvehicle" element={<VehicleForm add_vehicle={add_vehicle} />}></Route>
         <Route path="editvehicle" element={<VehicleEdit edit_vehicle={edit_vehicle} vehicles={vehicles} />} ></Route>
         <Route path="viewlogs" element={<PDFPrinter selectedVehicle={selectedVehicle} get_selected_vehicle={get_selected_vehicle} get_user_services={get_user_services} get_user_vehicle_services={get_user_vehicle_services} user={user} />}></Route>
-        <Route path="viewvehiclelogs" element={<PDFPrinter selectedVehicle={selectedVehicle} get_selected_vehicle={get_selected_vehicle} get_user_services={get_user_services} get_user_vehicle_services={get_user_vehicle_services} user={user} />}></Route>
+        <Route exact path="viewvehiclelogs" element={<PDFPrinter selectedVehicle={selectedVehicle} get_selected_vehicle={get_selected_vehicle} get_user_services={get_user_services} get_user_vehicle_services={get_user_vehicle_services} user={user} />}></Route>
       </Routes>
     </div>
   );

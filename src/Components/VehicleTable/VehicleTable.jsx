@@ -24,9 +24,12 @@ const VehicleTable = (props) => {
     }
 
     function navigateSingleServiceTable(vehicle) {
-        props.get_selected_vehicle(vehicle)
-        navigate(`/viewvehiclelogs`, { state: { ...vehicle } });
+        props.get_selected_vehicle(vehicle);
+        debugger
+        navigate("/viewvehiclelogs");
+        /* window.location="/viewvehiclelogs" */
     }
+
 
     return (
         <>
@@ -59,7 +62,7 @@ const VehicleTable = (props) => {
                                 <td>{vehicle.drive_type}</td>
                                 <td>{vehicle.fuel_type}</td>
                                 <td>{vehicle.vin}</td>
-                                <td><Button type="button" variant="outline-dark" onClick={() => navigateServiceForm(vehicle)}>Add Log</Button><Link to="/viewlogs" ><Button type="button" variant="outline-dark" onClick={() => navigateSingleServiceTable(vehicle)}>View Logs</Button></Link><Button type="submit" variant="outline-dark" onClick={() => navigateVehicleEdit(vehicle)}>Edit</Button><Button type="submit" variant="outline-dark" onClick={() => props.delete_vehicle(vehicle.id)}>Delete</Button></td>
+                                <td><Button type="button" variant="outline-dark" onClick={() => navigateServiceForm(vehicle)}>Add Log</Button><Button type="button" variant="outline-dark" onClick={() => navigateSingleServiceTable(vehicle)}>View Logs</Button><Button type="submit" variant="outline-dark" onClick={() => navigateVehicleEdit(vehicle)}>Edit</Button><Button type="submit" variant="outline-dark" onClick={() => props.delete_vehicle(vehicle.id)}>Delete</Button></td>
 
                             </tr>
                         );

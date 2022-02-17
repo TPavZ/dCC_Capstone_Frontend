@@ -5,12 +5,17 @@ import UserDashBoard from "./Components/UserDashBoard/UserDashBoard";
 import ServiceForm from "./Components/ServiceForm/ServiceForm";
 import LandingPage from "./Components/LandingPage/LandingPage";
 import VehicleForm from "./Components/VehicleForm/VehicleForm";
+import VehicleEdit from "./Components/VehicleEdit/VehicleEdit";
+import ServiceTable from "./Components/ServiceTable/ServiceTable";
+import { PDFPrinter } from "./Components/PDFPrinter/PDFPrinter";
 
 /* import { PDFPrintForm } from "./Components/PDFPrintForm/PDFPrintForm"; */
 import { Route, Routes } from "react-router-dom";
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import jwt_decode from "jwt-decode";
+
+
 
 
 
@@ -52,18 +57,18 @@ function App() {
     });
   }
 
-  /*    async function getUserInfo(user, token) {
-       await axios({
-         method: "get",
-         url: `http://127.0.0.1:8000/api/comments/user/${user.user_id}/`,
-         headers: {
-           Authorization: "Bearer " + token
-         },
-       }).then(response => {
-         setUserInfo(response.data);
-       })
-     }
-  */
+  async function getUserInfo(user, token) {
+    await axios({
+      method: "get",
+      url: `http://127.0.0.1:8000/api/vehicle/user/${user.user_id}/`,
+      headers: {
+        Authorization: "Bearer " + token
+      },
+    }).then(response => {
+      setUserInfo(response.data);
+    })
+  }
+
   async function logout() {
     localStorage.removeItem("token");
     window.location = "/";
@@ -107,8 +112,7 @@ function App() {
   }
 
   async function delete_vehicle(vehicle) {
-    // eslint-disable-next-line no-restricted-globals
-    let approveDelete = confirm(`Are you sure you would like to delete this vehicle?\n\nOK for yes. Cancel for no.`)
+    let approveDelete = window.confirm(`Delete this vehicle?\n\nOK for yes. Cancel for no.`)
     if (approveDelete) {
       const jwt = localStorage.getItem("token");
       await axios({
@@ -122,9 +126,21 @@ function App() {
       });
     }
   }
-  async function editVehicle(id, updatedVehicle) {
-    let response = await axios.put(`http://127.0.0.1:8000/???/${id}/`, updatedVehicle);
+
+  async function edit_vehicle(vehicle) {
+    const jwt = localStorage.getItem("token");
+    await axios({
+      method: "put",
+      url: `http://127.0.0.1:8000/api/vehicles/edit/${vehicle.id}/`,
+      headers: {
+        Authorization: "Bearer " + jwt
+      },
+      data: vehicle
+    }).then(response => {
+      window.location = "/dashboard";
+    });
   }
+
 
   async function add_service(serviceInfo) {
     const jwt = localStorage.getItem("token");
@@ -148,6 +164,8 @@ function App() {
         <Route path="dashboard" element={<UserDashBoard get_user_vehicles={get_user_vehicles} vehicles={vehicles} delete_vehicle={delete_vehicle} />} />
         <Route path="addlog" element={<ServiceForm add_service={add_service} />} />
         <Route path="addvehicle" element={<VehicleForm add_vehicle={add_vehicle} />}></Route>
+        <Route path="editvehicle" element={<VehicleEdit edit_vehicle={edit_vehicle} />} ></Route>
+        <Route path="viewlogs" element={<PDFPrinter />}></Route>
       </Routes>
     </div>
   );

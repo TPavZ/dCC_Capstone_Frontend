@@ -16,15 +16,19 @@ const VehicleTable = (props) => {
     }
 
     function navigateServiceForm(vehicle) {
-        navigate(`/addlog`, { state: { ...vehicle} });
+        navigate(`/addlog`, { state: { ...vehicle } });
+    }
+
+    function navigateVehicleEdit(vehicle) {
+        navigate(`/editvehicle`, { state: { ...vehicle } });
     }
 
     return (
         <>
-            <Table striped bordered hover className="table">
+            <Table striped bordered className="table">
                 <thead>
                     <tr>
-                        <th>VIN Number</th>
+                        <th>Service Totals</th>
                         <th>Year</th>
                         <th>Make</th>
                         <th>Model</th>
@@ -33,13 +37,14 @@ const VehicleTable = (props) => {
                         <th>Transmission Type</th>
                         <th>Drive Type</th>
                         <th>Fuel Type</th>
+                        <th>VIN Number</th>
                     </tr>
                 </thead>
                 <tbody>
                     {props.vehicles.map((vehicle, index) => {
                         return (
                             <tr key={index}>
-                                <td>{vehicle.vin}</td>
+                                <td>$$$.$$$</td>
                                 <td>{vehicle.year}</td>
                                 <td>{vehicle.make}</td>
                                 <td>{vehicle.model}</td>
@@ -48,7 +53,9 @@ const VehicleTable = (props) => {
                                 <td>{vehicle.transmission_type}</td>
                                 <td>{vehicle.drive_type}</td>
                                 <td>{vehicle.fuel_type}</td>
-                                <td><Button type="button" variant="outline-dark" onClick={() => navigateServiceForm(vehicle)}>Add Log</Button><Button type="submit" variant="outline-dark" onClick={() => toggleEdit(vehicle)}>View</Button><Button type="submit" variant="outline-dark" onClick={() => props.deleteVehicle(vehicle.id)}>Edit</Button><Button type="submit" variant="outline-dark" onClick={() => props.delete_dehicle(vehicle.id)}>Delete</Button></td>
+                                <td>{vehicle.vin}</td>
+                                <td><Button type="button" variant="outline-dark" onClick={() => navigateServiceForm(vehicle)}>Add Log</Button><Link to="/viewlogs" ><Button type="button" variant="outline-dark">View Logs</Button></Link><Button type="submit" variant="outline-dark" onClick={() => navigateVehicleEdit(vehicle)}>Edit</Button><Button type="submit" variant="outline-dark" onClick={() => props.delete_dehicle(vehicle.id)}>Delete</Button></td>
+
                             </tr>
                         );
                     })}

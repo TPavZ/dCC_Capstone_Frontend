@@ -1,5 +1,5 @@
-import { Link } from "react-router-dom";
-import React, { useState } from "react"
+import { Link, useLocation } from "react-router-dom";
+import React, { useState, useEffect } from "react"
 
 const VehicleEdit = (props) => {
     const [vin, setVin] = useState(props.vehicle.vin);
@@ -11,6 +11,7 @@ const VehicleEdit = (props) => {
     const [transmissionType, setTransmissionType] = useState(props.vehicle.transmission_type);
     const [driveType, setDriveType] = useState(props.vehicle.drive_type);
     const [fuelType, setFuelType] = useState(props.vehicle.fuel_type);
+    const { state } = useLocation();
 
     function resetForm() {
         setVin("");
@@ -21,7 +22,8 @@ const VehicleEdit = (props) => {
         setEngineSize("");
         setTransmissionType("");
         setDriveType("");
-        setFuelType("");    }
+        setFuelType("");
+    }
 
 
     function handleSubmit(e) {
@@ -41,11 +43,14 @@ const VehicleEdit = (props) => {
         resetForm();
     }
 
+    useEffect(() => {
+        console.log(state)
+    }, [state])
 
     return (
         <div>
             <form onSubmit={handleSubmit} className="vehicle-form">
-                <label><strong>Edit Vehicle</strong></label>
+                <label><strong>Edit Vehicle: {state.year} {state.make} {state.model}</strong></label>
                 <input name="vin" type="text" onChange={(e) => setVin(e.target.value)} value={vin} placeholder="VIN Number"></input>
                 <input name="year" type="text" onChange={(e) => setYear(e.target.value)} value={year} placeholder="Year"></input>
                 <input name="make" type="text" onChange={(e) => setMake(e.target.value)} value={make} placeholder="Make"></input>

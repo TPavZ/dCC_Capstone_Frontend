@@ -1,0 +1,11 @@
+.service-form {
+    text-align: center;
+}
+
+.check-boxes {
+    /* text-align: left; */
+    height: 100vh;
+    display: contents;
+    justify-content: center;
+    align-items: left;
+}

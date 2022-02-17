@@ -3,13 +3,17 @@ import * as React from "react";
 import ReactToPrint from "react-to-print";
 import { PDFPrintForm } from "../PDFPrintForm/PDFPrintForm";
 import { useState, useEffect } from "react"
+import { useLocation } from "react-router-dom";
 
 export class PDFPrinter extends React.PureComponent {
+
   componentRef = null;
 
   constructor(props) {
     super(props);
+    this.vehicle = {
 
+    }
     this.state = {
       isLoading: false,
       text: "old boring text"
@@ -72,7 +76,7 @@ export class PDFPrinter extends React.PureComponent {
         {this.state.isLoading && (
           <p className="indicator">Magic Is Happening...</p>
         )}
-        <PDFPrintForm get_user_services={this.props.get_user_services} get_user_vehicle_services={this.props.get_user_vehicle_services} user={this.props.user} ref={this.setComponentRef} text={this.state.text} />
+        <PDFPrintForm selectedVehicle={this.props.selectedVehicle} get_user_services={this.props.get_user_services} get_user_vehicle_services={this.props.get_user_vehicle_services} user={this.props.user} ref={this.setComponentRef} text={this.state.text} />
       </div>
     );
   }

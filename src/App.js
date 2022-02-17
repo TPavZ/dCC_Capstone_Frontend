@@ -22,7 +22,8 @@ function App() {
   const [user, setUser] = useState(null);
   const [userInfo, setUserInfo] = useState([]);
   const [serviceInfo, setServiceInfo] = useState([]);
-  const [vehicles, setVehicles] = useState([])
+  const [vehicles, setVehicles] = useState([]);
+  const [selectedVehicle, setSelectedVehicle] = useState();
 
   useEffect(() => {
     const token = localStorage.getItem("token");
@@ -37,6 +38,10 @@ function App() {
   useEffect(() => {
     get_user_vehicles();
   }, [user])
+
+  function get_selected_vehicle(selected_vehicle) {
+    setSelectedVehicle(selected_vehicle);
+  }
 
   async function login(username, password) {
     await axios({
@@ -178,11 +183,12 @@ function App() {
         <Route path="" element={<LandingPage add_service={add_service} />} />
         <Route path="login" element={<LoginForm login={login} />} />
         <Route path="register" element={<RegistForm register={register} />} />
-        <Route path="dashboard" element={<UserDashBoard user={user} get_user_services={get_user_services} get_user_vehicles={get_user_vehicles} vehicles={vehicles} delete_vehicle={delete_vehicle} />} />
+        <Route path="dashboard" element={<UserDashBoard get_selected_vehicle={get_selected_vehicle} user={user} get_user_services={get_user_services} get_user_vehicles={get_user_vehicles} vehicles={vehicles} delete_vehicle={delete_vehicle} />} />
         <Route path="addlog" element={<ServiceForm add_service={add_service} />} />
         <Route path="addvehicle" element={<VehicleForm add_vehicle={add_vehicle} />}></Route>
         <Route path="editvehicle" element={<VehicleEdit edit_vehicle={edit_vehicle} vehicles={vehicles} />} ></Route>
-        <Route path="viewlogs" element={<PDFPrinter get_user_services={get_user_services} get_user_vehicle_services={get_user_vehicle_services} user={user} />}></Route>
+        <Route path="viewlogs" element={<PDFPrinter selectedVehicle={selectedVehicle} get_selected_vehicle={get_selected_vehicle} get_user_services={get_user_services} get_user_vehicle_services={get_user_vehicle_services} user={user} />}></Route>
+        <Route path="viewvehiclelogs" element={<PDFPrinter selectedVehicle={selectedVehicle} get_selected_vehicle={get_selected_vehicle} get_user_services={get_user_services} get_user_vehicle_services={get_user_vehicle_services} user={user} />}></Route>
       </Routes>
     </div>
   );

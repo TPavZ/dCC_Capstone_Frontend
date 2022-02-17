@@ -1,3 +1,4 @@
+import Button from "react-bootstrap/Button";
 import * as React from "react";
 import ReactToPrint from "react-to-print";
 import { PDFPrintForm } from "../PDFPrintForm/PDFPrintForm";
@@ -52,7 +53,7 @@ export class PDFPrinter extends React.PureComponent {
     // return <button onClick={() => alert('This will not work')}>Print this out!</button>;
 
     // Good
-    return <button>Print To PDF</button>;
+    return <Button type="button" variant="outline-dark">Print To PDF</Button>;
   };
 
   render() {

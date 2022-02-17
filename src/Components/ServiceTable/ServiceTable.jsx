@@ -26,9 +26,9 @@ const ServiceTable = (props) => {
                 {/* <ListGroup.Item variant={determineColor(props.service.battery_service)}>Battery Service</ListGroup.Item> */}
                 <ListGroup.Item variant="secondary">Brake Fluid Service</ListGroup.Item>
                 <ListGroup.Item variant="success">Front Brakes</ListGroup.Item>
-                <ListGroup.Item variant="danger">Rear Brakes</ListGroup.Item>
+                <ListGroup.Item variant="secondary">Rear Brakes</ListGroup.Item>
                 <ListGroup.Item variant="secondary">Bulb Replacement</ListGroup.Item>
-                <ListGroup.Item variant="danger">Cabin Filter Replacement</ListGroup.Item>
+                <ListGroup.Item variant="secondary">Cabin Filter Replacement</ListGroup.Item>
                 <ListGroup.Item variant="success">Coolant Service</ListGroup.Item>
                 <ListGroup.Item variant="success">Differentail Service</ListGroup.Item>
                 <ListGroup.Item variant="success">Drive Belt Replacement</ListGroup.Item>

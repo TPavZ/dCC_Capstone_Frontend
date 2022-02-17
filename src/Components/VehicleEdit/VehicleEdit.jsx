@@ -97,9 +97,9 @@ const VehicleEdit = (props) => {
                     <option value="Electric">Electric</option>
                     <option value="Other">Other</option>
                 </select>
-                <button type="submit" onClick={handleSubmit}>Submit</button>
+                <Button type="submit" variant="outline-dark" onClick={handleSubmit}>Submit</Button>
                 <Link to="/dashboard">
-                    <button type="button" variant="outline-dark">Back</button>
+                    <Button type="button" variant="outline-dark">Back</Button>
                 </Link>
             </form>
         </div>

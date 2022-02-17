@@ -117,7 +117,7 @@ function App() {
       const jwt = localStorage.getItem("token");
       await axios({
         method: "delete",
-        url: `http://127.0.0.1:8000/api/vehicles/delete/${vehicle.id}/`,
+        url: `http://127.0.0.1:8000/api/vehicles/delete/${vehicle}/`,
         headers: {
           Authorization: "Bearer " + jwt
         },
@@ -129,9 +129,10 @@ function App() {
 
   async function edit_vehicle(vehicle) {
     const jwt = localStorage.getItem("token");
+    debugger
     await axios({
       method: "put",
-      url: `http://127.0.0.1:8000/api/vehicles/edit/${vehicle.id}/`,
+      url: `http://127.0.0.1:8000/api/vehicles/edit/${vehicle}/`,
       headers: {
         Authorization: "Bearer " + jwt
       },
@@ -164,7 +165,7 @@ function App() {
         <Route path="dashboard" element={<UserDashBoard get_user_vehicles={get_user_vehicles} vehicles={vehicles} delete_vehicle={delete_vehicle} />} />
         <Route path="addlog" element={<ServiceForm add_service={add_service} />} />
         <Route path="addvehicle" element={<VehicleForm add_vehicle={add_vehicle} />}></Route>
-        <Route path="editvehicle" element={<VehicleEdit edit_vehicle={edit_vehicle} />} ></Route>
+        <Route path="editvehicle" element={<VehicleEdit edit_vehicle={edit_vehicle} vehicles={vehicles}/>} ></Route>
         <Route path="viewlogs" element={<PDFPrinter />}></Route>
       </Routes>
     </div>

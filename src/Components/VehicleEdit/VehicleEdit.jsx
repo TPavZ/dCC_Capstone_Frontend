@@ -1,16 +1,17 @@
 import { Link, useLocation } from "react-router-dom";
 import React, { useState, useEffect } from "react"
+import Button from "react-bootstrap/Button";
 
 const VehicleEdit = (props) => {
-    const [vin, setVin] = useState(props.vehicle.vin);
-    const [year, setYear] = useState(props.vehicle.year);
-    const [make, setMake] = useState(props.vehicle.make);
-    const [model, setModel] = useState(props.vehicle.model);
-    const [trim, setTrim] = useState(props.vehicle.trim);
-    const [engineSize, setEngineSize] = useState(props.vehicle.engine_size);
-    const [transmissionType, setTransmissionType] = useState(props.vehicle.transmission_type);
-    const [driveType, setDriveType] = useState(props.vehicle.drive_type);
-    const [fuelType, setFuelType] = useState(props.vehicle.fuel_type);
+    const [vin, setVin] = useState("");
+    const [year, setYear] = useState("");
+    const [make, setMake] = useState("");
+    const [model, setModel] = useState("");
+    const [trim, setTrim] = useState("");
+    const [engineSize, setEngineSize] = useState("");
+    const [transmissionType, setTransmissionType] = useState("");
+    const [driveType, setDriveType] = useState("");
+    const [fuelType, setFuelType] = useState("");
     const { state } = useLocation();
 
     function resetForm() {
@@ -28,7 +29,8 @@ const VehicleEdit = (props) => {
 
     function handleSubmit(e) {
         e.preventDefault();
-        let updatedVehcile = {
+        let updatedVehicle = {
+            "id": state.id,
             "vin": vin,
             "year": year,
             "make": make,
@@ -39,12 +41,22 @@ const VehicleEdit = (props) => {
             "drive_type": driveType,
             "fuel_type": fuelType,
         }
-        props.VehicleEdit(props.vehicle.id, updatedVehcile);
+        props.edit_vehicle(updatedVehicle);
         resetForm();
     }
 
     useEffect(() => {
-        console.log(state)
+        if (state) {
+            setVin(state.vin)
+            setYear(state.year)
+            setMake(state.make)
+            setModel(state.model)
+            setTrim(state.trim)
+            setEngineSize(state.engineSize)
+            setTransmissionType(state.transmissionType)
+            setDriveType(state.driveType)
+            setFuelType(state.fuelType)
+        }
     }, [state])
 
     return (

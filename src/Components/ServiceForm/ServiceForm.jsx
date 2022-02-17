@@ -1,5 +1,5 @@
-import { useState } from 'react'
-import { Link } from "react-router-dom";
+import { useState, useEffect } from 'react'
+import { Link, useLocation } from "react-router-dom";
 /* I would like to have a drop down to select vehicle for users vehicle list
 have input  for milage, shop used and total repair cost.  
 have a checkbox for the services
@@ -37,6 +37,8 @@ const ServiceForm = (props) => {
     const [majorRepairs, setMajorRepairs] = useState("");
     const [otherServices, setOtherServices] = useState("");
     const [serviceDetails, setServiceDetails] = useState("");
+    const { state } = useLocation();
+    /* const { vehicle } = state; */
 
     function resetForm() {
         setCurrentMileage("");
@@ -50,6 +52,7 @@ const ServiceForm = (props) => {
     function handleSubmit(e) {
         e.preventDefault();
         let vehicleInfo = {
+            "vehicle": state.id,
             "current_mileage": currentMileage,
             "service_grand_total": serviceGrandTotal,
             "service_date": serviceDate,
@@ -87,10 +90,14 @@ const ServiceForm = (props) => {
         resetForm();
     }
 
+    useEffect(() => {
+        console.log(state)
+    }, [state])
+
     return (
         <div className="service-form">
             <form id="service-form2">
-                <label><strong>Service Logger Entry</strong></label>
+                <label><strong>Service Logger Entry: {state.year} {state.make} {state.model}</strong></label>
                 <div><input name="current_mileage" type="text" value={currentMileage} placeholder="Mileage When Serviced" onChange={(e) => setCurrentMileage(e.target.value)}></input> </div>
                 <div><input name="service_grand_total" type="text" value={serviceGrandTotal} placeholder="Total Repair Cost" onChange={(e) => setServiceGrandTotal(e.target.value)}></input> </div>
                 <div><input name="service_date" type="date" value={serviceDate} onChange={(e) => setServiceDate(e.target.value)}></input> Date Of Service</div>

@@ -1,15 +1,22 @@
 import { useState } from "react";
 import { Table, Button } from "react-bootstrap";
+import { Link, useNavigate } from "react-router-dom";
 import VehicleEdit from "../VehicleEdit/VehicleEdit";
 
 const VehicleTable = (props) => {
+    /* console.log(props.vehicles) */
 
     const [showForm, setShowForm] = useState(false);
     const [editedVehicle, setEditedVehicle] = useState("")
+    const navigate = useNavigate();
 
-    function toggleEdit(vehicle) {
-        setEditedVehicle(vehicle);
+    function toggleEdit(vehicles) {
+        setEditedVehicle(vehicles);
         setShowForm(true);
+    }
+
+    function navigateServiceForm(vehicle) {
+        navigate(`/addlog`, { state: { ...vehicle} });
     }
 
     return (
@@ -38,10 +45,10 @@ const VehicleTable = (props) => {
                                 <td>{vehicle.model}</td>
                                 <td>{vehicle.trim}</td>
                                 <td>{vehicle.engine_size}</td>
-                                <td>{vehicle.trasmission_type}</td>
+                                <td>{vehicle.transmission_type}</td>
                                 <td>{vehicle.drive_type}</td>
                                 <td>{vehicle.fuel_type}</td>
-                                <td><Button type="submit" variant="outline-dark" onClick={() => toggleEdit(vehicle)}>Edit</Button><Button type="submit" variant="outline-dark" onClick={() => props.deleteVehicle(vehicle.id)}>Delete</Button></td>
+                                <td><Button type="button" variant="outline-dark" onClick={() => navigateServiceForm(vehicle)}>Add Log</Button><Button type="submit" variant="outline-dark" onClick={() => toggleEdit(vehicle)}>View</Button><Button type="submit" variant="outline-dark" onClick={() => props.deleteVehicle(vehicle.id)}>Edit</Button><Button type="submit" variant="outline-dark" onClick={() => props.delete_dehicle(vehicle.id)}>Delete</Button></td>
                             </tr>
                         );
                     })}

@@ -1,5 +1,6 @@
 import React, { useState } from "react"
 import { Link } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
 const VehicleForm = (props) => {
     const [vin, setVin] = useState("");
@@ -11,6 +12,7 @@ const VehicleForm = (props) => {
     const [transmissionType, setTransmissionType] = useState("");
     const [driveType, setDriveType] = useState("");
     const [fuelType, setFuelType] = useState("");
+    
 
     function resetForm() {
         setVin("");

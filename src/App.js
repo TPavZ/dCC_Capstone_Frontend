@@ -10,6 +10,7 @@ import VehicleForm from "./Components/VehicleForm/VehicleForm";
 import { Route, Routes } from "react-router-dom";
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import jwt_decode from "jwt-decode";
 
 
 
@@ -17,11 +18,21 @@ function App() {
   const [user, setUser] = useState(null);
   const [userInfo, setUserInfo] = useState([]);
   const [serviceInfo, setServiceInfo] = useState([]);
+  const [vehicles, setVehicles] = useState([])
 
   useEffect(() => {
     const token = localStorage.getItem("token");
-    setUser(token);
+    try {
+      const decodedUser = jwt_decode(token);
+      setUser(decodedUser);
+      /*      getUserInfo(decodedUser, token); */
+    } catch { }
+    /*     setUser(token); */
   }, [])
+
+  useEffect(() => {
+    get_user_vehicles();
+  }, [user])
 
   async function login(username, password) {
     await axios({
@@ -41,18 +52,18 @@ function App() {
     });
   }
 
-  /*   async function getUserInfo(user, token) {
-      await axios({
-        method: "get",
-        url: `http://127.0.0.1:8000/api/comments/user/${user.user_id}/`,
-        headers: {
-          Authorization: "Bearer " + token
-        },
-      }).then(response => {
-        setUserInfo(response.data);
-      })
-    } */
-
+  /*    async function getUserInfo(user, token) {
+       await axios({
+         method: "get",
+         url: `http://127.0.0.1:8000/api/comments/user/${user.user_id}/`,
+         headers: {
+           Authorization: "Bearer " + token
+         },
+       }).then(response => {
+         setUserInfo(response.data);
+       })
+     }
+  */
   async function logout() {
     localStorage.removeItem("token");
     window.location = "/";
@@ -76,7 +87,7 @@ function App() {
     const jwt = localStorage.getItem("token");
     await axios({
       method: "post",
-      url: "http://127.0.0.1:8000/api/vehicles/addvehicle/",
+      url: `http://127.0.0.1:8000/api/vehicles/${user.user_id}/`,
       headers: { Authorization: "Bearer " + jwt },
       data: vehicleInfo
     }).then(response => {
@@ -88,17 +99,31 @@ function App() {
     const jwt = localStorage.getItem("token");
     await axios({
       method: "get",
-      url: `http://127.0.0.1:8000/vehicles/${user.id}/`,
-      headers: { Authorization: "Bearer " + jwt }
+      url: `http://127.0.0.1:8000/api/vehicles/${user.user_id}/`,
+      headers: { Authorization: "Bearer " + jwt },
+    }).then(response => {
+      setVehicles(response.data);
     });
   }
 
+  async function delete_vehicle(vehicle) {
+    // eslint-disable-next-line no-restricted-globals
+    let approveDelete = confirm(`Are you sure you would like to delete this vehicle?\n\nOK for yes. Cancel for no.`)
+    if (approveDelete) {
+      const jwt = localStorage.getItem("token");
+      await axios({
+        method: "delete",
+        url: `http://127.0.0.1:8000/api/vehicles/delete/${vehicle.id}/`,
+        headers: {
+          Authorization: "Bearer " + jwt
+        },
+      }).then(response => {
+        window.location = "/dashboard";
+      });
+    }
+  }
   async function editVehicle(id, updatedVehicle) {
     let response = await axios.put(`http://127.0.0.1:8000/???/${id}/`, updatedVehicle);
-  }
-
-  async function deleteVehicle(id) {
-    let response = await axios.delete(`http://127.0.0.1:8000/???/${id}/`);
   }
 
   async function add_service(serviceInfo) {
@@ -108,6 +133,8 @@ function App() {
       url: "http://127.0.0.1:8000/api/service_logs/addservice/",
       headers: { Authorization: "Bearer " + jwt },
       data: serviceInfo
+    }).then(response => {
+      window.location = "/dashboard";
     });
   }
 
@@ -118,7 +145,7 @@ function App() {
         <Route path="" element={<LandingPage add_service={add_service} />} />
         <Route path="login" element={<LoginForm login={login} />} />
         <Route path="register" element={<RegistForm register={register} />} />
-        <Route path="dashboard" element={<UserDashBoard get_user_vehicles={get_user_vehicles} />} />
+        <Route path="dashboard" element={<UserDashBoard get_user_vehicles={get_user_vehicles} vehicles={vehicles} delete_vehicle={delete_vehicle} />} />
         <Route path="addlog" element={<ServiceForm add_service={add_service} />} />
         <Route path="addvehicle" element={<VehicleForm add_vehicle={add_vehicle} />}></Route>
       </Routes>

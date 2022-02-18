@@ -194,7 +194,7 @@ function App() {
 
   return (
     <div>
-      <NavBar user={user} logout={logout} />
+      <NavBar user={user} logout={logout} get_user_vehicle_services={get_user_vehicle_services}/>
       <Routes>
         <Route exact path="" element={<LandingPage add_service={add_service} />} />
         <Route path="login" element={<LoginForm login={login} />} />

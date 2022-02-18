@@ -1,0 +1,13 @@
+.table {
+    color: white;
+    background-color: rgba(0, 0, 0, 0.397);
+}
+.table th {
+    color: white;
+    background-color: rgba(0, 0, 0, 0.397);
+}
+.table td {
+    color: white !important;
+    background-color: rgba(0, 0, 0, 0.397);
+}
+

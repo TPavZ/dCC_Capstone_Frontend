@@ -5,6 +5,7 @@
     left: 50%;
     margin-top: -50px;
     margin-left: -100px;
+    color: white;
 }
 
 .password {
@@ -14,4 +15,8 @@
 
 .username {
     margin-top: 4px;
+}
+
+.login-form a {
+    color: aqua;
 }

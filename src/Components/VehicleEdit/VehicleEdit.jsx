@@ -1,6 +1,7 @@
 import { Link, useLocation } from "react-router-dom";
 import React, { useState, useEffect } from "react"
 import Button from "react-bootstrap/Button";
+import "./VehicleEdit.css"
 
 const VehicleEdit = (props) => {
     const [vin, setVin] = useState("");
@@ -60,15 +61,15 @@ const VehicleEdit = (props) => {
     }, [state])
 
     return (
-        <div>
+        <div className="veh-edit-form">
             <form onSubmit={handleSubmit} className="vehicle-form">
                 <label><strong>Edit Vehicle: {state.year} {state.make} {state.model}</strong></label>
-                <input name="vin" type="text" onChange={(e) => setVin(e.target.value)} value={vin} placeholder="VIN Number"></input>
-                <input name="year" type="text" onChange={(e) => setYear(e.target.value)} value={year} placeholder="Year"></input>
-                <input name="make" type="text" onChange={(e) => setMake(e.target.value)} value={make} placeholder="Make"></input>
-                <input name="model" type="text" onChange={(e) => setModel(e.target.value)} value={model} placeholder="Model"></input>
-                <input name="trim" type="text" onChange={(e) => setTrim(e.target.value)} value={trim} placeholder="Trim"></input>
-                <select id="dropdown" name="engine_size" type="text" onChange={(e) => setEngineSize(e.target.value)} value={engineSize}>
+                <div className="inputs"><input name="vin" type="text" onChange={(e) => setVin(e.target.value)} value={vin} placeholder="VIN Number"></input></div>
+                <div className="inputs"><input name="year" type="text" onChange={(e) => setYear(e.target.value)} value={year} placeholder="Year"></input></div>
+                <div className="inputs"><input name="make" type="text" onChange={(e) => setMake(e.target.value)} value={make} placeholder="Make"></input></div>
+                <div className="inputs"><input name="model" type="text" onChange={(e) => setModel(e.target.value)} value={model} placeholder="Model"></input></div>
+                <div className="inputs"><input name="trim" type="text" onChange={(e) => setTrim(e.target.value)} value={trim} placeholder="Trim"></input></div>
+                <div className="inputs"><select id="dropdown" name="engine_size" type="text" onChange={(e) => setEngineSize(e.target.value)} value={engineSize}>
                     <option placeholder="engine_size">{engineSize}</option>
                     <option value="4 Cylinder">4 Cylinder</option>
                     <option value="6 Cylinder">6 Cylinder</option>
@@ -76,30 +77,30 @@ const VehicleEdit = (props) => {
                     <option value="10 Cylinder">10 Cylinder</option>
                     <option value="12 Cylinder">12 Cylinder</option>
                     <option value="Other">Other</option>
-                </select>
-                <select id="dropdown" name="transmission_type" type="text" onChange={(e) => setTransmissionType(e.target.value)} value={transmissionType}>
+                </select></div>
+                <div className="inputs"><select id="dropdown" name="transmission_type" type="text" onChange={(e) => setTransmissionType(e.target.value)} value={transmissionType}>
                     <option placeholder="transmission_type">{transmissionType}</option>
                     <option value="Automatic">Automatic</option>
                     <option value="Manual">Manual</option>
                     <option value="CVT">CVT</option>
-                </select>
-                <select id="dropdown" name="drive_type" type="text" onChange={(e) => setDriveType(e.target.value)} value={driveType}>
+                </select></div>
+                <div className="inputs"><select id="dropdown" name="drive_type" type="text" onChange={(e) => setDriveType(e.target.value)} value={driveType}>
                     <option placeholder="drive_type">{driveType}</option>
                     <option value="AWD">AWD</option>
                     <option value="4WD">4WD</option>
                     <option value="FWD">FWD</option>
                     <option value="RWD">RWD</option>
-                </select>
-                <select id="dropdown" name="fuel_type" type="text" onChange={(e) => setFuelType(e.target.value)} value={fuelType}>
+                </select></div>
+                <div className="inputs"><select id="dropdown" name="fuel_type" type="text" onChange={(e) => setFuelType(e.target.value)} value={fuelType}>
                     <option placeholder="fuel_type">{fuelType}</option>
                     <option value="Petrol">Petrol</option>
                     <option value="Diesel">Diesel</option>
                     <option value="Electric">Electric</option>
                     <option value="Other">Other</option>
-                </select>
-                <Button type="submit" variant="outline-dark" onClick={handleSubmit}>Submit</Button>
+                </select></div>
+                <Button type="submit" variant="outline-light" onClick={handleSubmit}>Submit</Button>
                 <Link to="/dashboard">
-                    <Button type="button" variant="outline-dark">Back</Button>
+                    <Button type="button" variant="outline-light">Back</Button>
                 </Link>
             </form>
         </div>

@@ -12,7 +12,7 @@ const LandingPage = (props) => {
                 one convenient place. Please feel free to create an account and get started today!</p4>
             <div>
                 <Link to="/login">
-                    <Button type="button" /* variant="outline-light" */ variant="outline-dark">Log In</Button></Link> or <Link to="/Register">Register</Link> here
+                    <Button type="button" variant="outline-light" /* variant="outline-dark" */>Log In</Button></Link> or <Link to="/Register">Register</Link> here
             </div>
         </div>
 

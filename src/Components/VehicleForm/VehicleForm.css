@@ -1,4 +1,4 @@
-.regist-form {
+.veh-form {
     text-align: center;
     position: fixed;
     top: 50%;
@@ -11,4 +11,14 @@
 .inputs {
     margin-top: 4px;
     margin-bottom: 4px;
+}
+
+select {
+    background-color: rgba(0, 0, 0, 0.493);
+    color: white;
+}
+
+input {
+    background-color: rgba(0, 0, 0, 0.493);
+    color: white;
 }

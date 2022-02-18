@@ -1,5 +1,6 @@
 .service-form {
     text-align: center;
+    color: white;
 }
 
 .check-boxes {
@@ -8,4 +9,9 @@
     display: contents;
     justify-content: center;
     align-items: left;
+}
+
+textarea {
+    background-color: rgba(0, 0, 0, 0.493);
+    color: white;
 }

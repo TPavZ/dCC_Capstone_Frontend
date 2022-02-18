@@ -94,10 +94,10 @@ const RegistForm = (props) => {
                 }
                 <div>
                     <Link to="/dashboard">
-                        <Button type="submit" variant="outline-dark" onClick={handleSubmit}>Register</Button>
+                        <Button type="submit" variant="outline-light" onClick={handleSubmit}>Register</Button>
                     </Link>
                     <Link to="/">
-                        <Button type="button" variant="outline-dark">Back</Button>
+                        <Button type="button" variant="outline-light">Back</Button>
                     </Link>
                 </div>
             </form>

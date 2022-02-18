@@ -3,6 +3,7 @@ import * as React from "react";
 import ReactToPrint from "react-to-print";
 import { PDFPrintForm } from "../PDFPrintForm/PDFPrintForm";
 import { useState, useEffect } from "react"
+import "./PDFPrinter.css"
 
 export class PDFPrinter extends React.PureComponent {
 
@@ -54,7 +55,7 @@ export class PDFPrinter extends React.PureComponent {
     // return <button onClick={() => alert('This will not work')}>Print this out!</button>;
 
     // Good
-    return <Button type="button" variant="outline-dark">Print To PDF</Button>;
+    return <Button type="button" variant="outline-light">Print To PDF</Button>;
   };
 
   render() {

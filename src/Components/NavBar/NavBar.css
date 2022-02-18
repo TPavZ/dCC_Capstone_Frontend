@@ -2,3 +2,18 @@ button {
     margin-left: 4px;
     margin-right: 4px;
 }
+
+.navbar-light .navbar-brand {
+    color: white !important;
+}
+
+.bg-light {
+    --bs-bg-opacity: 1;
+    background-color: rgba(70, 69, 69, 0.479) !important;
+}
+
+.navbar-light .navbar-toggler {
+    color: rgba(255, 255, 255, 0.55);
+    border-color: rgb(255, 255, 255);
+}
+

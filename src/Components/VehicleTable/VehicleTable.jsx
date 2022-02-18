@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Table, Button } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
 import VehicleEdit from "../VehicleEdit/VehicleEdit";
+import "./VehicleTable.css"
 
 const VehicleTable = (props) => {
     /* console.log(props.vehicles) */
@@ -62,7 +63,7 @@ const VehicleTable = (props) => {
                                 <td>{vehicle.drive_type}</td>
                                 <td>{vehicle.fuel_type}</td>
                                 <td>{vehicle.vin}</td>
-                                <td><Button type="button" variant="outline-dark" onClick={() => navigateServiceForm(vehicle)}>Add Log</Button><Button type="button" variant="outline-dark" onClick={() => navigateSingleServiceTable(vehicle)}>View Logs</Button><Button type="submit" variant="outline-dark" onClick={() => navigateVehicleEdit(vehicle)}>Edit</Button><Button type="submit" variant="outline-dark" onClick={() => props.delete_vehicle(vehicle.id)}>Delete</Button></td>
+                                <td><Button type="button" variant="outline-light" onClick={() => navigateServiceForm(vehicle)}>Add Log</Button><Button type="button" variant="outline-light" onClick={() => navigateSingleServiceTable(vehicle)}>View Logs</Button><Button type="submit" variant="outline-light" onClick={() => navigateVehicleEdit(vehicle)}>Edit</Button><Button type="submit" variant="outline-light" onClick={() => props.delete_vehicle(vehicle.id)}>Delete</Button></td>
 
                             </tr>
                         );

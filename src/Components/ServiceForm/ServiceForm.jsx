@@ -12,8 +12,8 @@ const ServiceForm = (props) => {
     const [currentMileage, setCurrentMileage] = useState("")
     const [serviceGrandTotal, setServiceGrandTotal] = useState("");
     const [serviceDate, setServiceDate] = useState("");
-    const [batteryService, setBatteryService] = useState("");
-    const [brakefluidService, setBrakefluidService] = useState("");
+    const [batteryService, setBatteryService] = useState(false);
+    const [brakefluidService, setBrakefluidService] = useState(false);
     const [brakefrontService, setBrakefrontService] = useState("");
     const [brakerearService, setBrakerearService] = useState("");
     const [bulbReplacement, setBulbReplacement] = useState("");
@@ -107,8 +107,8 @@ const ServiceForm = (props) => {
                 <div><input name="service_date" type="date" value={serviceDate} onChange={(e) => setServiceDate(e.target.value)}></input></div>
                 <div><strong>Check Services That Have Been Completed.</strong></div>
                 <div className="check-boxes">
-                    <div><input type="checkbox" name="battery_service" id="true" value={batteryService} onChange={(e) => setBatteryService(e.target.value)}></input> Battery Service</div>
-                    <div><input type="checkbox" name="brakefluid_service" id="true" value={brakefluidService} onChange={(e) => setBrakefluidService(e.target.value)}></input> Brake Fluid Service</div>
+                    <div><input type="checkbox" name="battery_service" id="true" value={batteryService} onChange={(e) => setBatteryService(!batteryService)}></input> Battery Service</div>
+                    <div><input type="checkbox" name="brakefluid_service" id="true" value={brakefluidService} onChange={(e) => setBrakefluidService(!brakefluidService)}></input> Brake Fluid Service</div>
                     <div><input type="checkbox" name="brakefront_service" id="true" value={brakefrontService} onChange={(e) => setBrakefrontService(e.target.value)}></input> Front Brake Service</div>
                     <div><input type="checkbox" name="brakerear_service" id="true" value={brakerearService} onChange={(e) => setBrakerearService(e.target.value)}></input> Rear Brake Service</div>
                     <div><input type="checkbox" name="bulb_replacement" id="true" value={bulbReplacement} onChange={(e) => setBulbReplacement(e.target.value)}></input> Bulb Replacement</div>
@@ -136,8 +136,8 @@ const ServiceForm = (props) => {
                 <div><Textarea name="major_repairs" type="textare" value={majorRepairs} placeholder="Major Repairs?" onChange={(e) => setMajorRepairs(e.target.value)}></Textarea> </div>
                 <div><Textarea name="other_services" type="textare" value={otherServices} placeholder="Other Services?" onChange={(e) => setOtherServices(e.target.value)}></Textarea> </div>
                 <div><Textarea name="service_details" type="textare" value={serviceDetails} placeholder="Service Details..." onChange={(e) => setServiceDetails(e.target.value)}></Textarea> </div>
-                <Button type="submit" variant="outline-dark" onClick={handleSubmit}>Log It!</Button>
-                <Link to="/dashboard"><Button type="Button" variant="outline-dark">Back</Button></Link>
+                <Button type="submit" variant="outline-light" onClick={handleSubmit}>Log It!</Button>
+                <Link to="/dashboard"><Button type="Button" variant="outline-light">Back</Button></Link>
             </form>
         </div>
     );

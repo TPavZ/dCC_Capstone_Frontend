@@ -26,10 +26,10 @@ const LoginForm = (props) => {
                 </div>
                 <div>
                     <Link to="/dashboard">
-                        <Button type="submit" variant="outline-dark" onClick={handleSubmit}>Log In</Button>
+                        <Button type="submit" variant="outline-light" onClick={handleSubmit}>Log In</Button>
                     </Link>
                     <Link to="/">
-                        <Button type="button" variant="outline-dark">Back</Button>
+                        <Button type="button" variant="outline-light">Back</Button>
                     </Link>
                     <div>
                         no account? <Link to="/Register">Register</Link> here

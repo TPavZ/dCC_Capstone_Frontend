@@ -11,12 +11,7 @@ const NavBar = (props) => {
         <Navbar bg="light" expand="lg" sticky="top">
             <Container fluid>
                 <Navbar.Brand>
-                    <img
-                        src="/favicon.ico"
-                        width="30"
-                        height="30"
-                        className="d-inline-block align-top"
-                        alt="Service Logger logo" />{' '}Service Logger</Navbar.Brand>
+                    Service Logger</Navbar.Brand>
                 <Navbar.Toggle aria-controls="navbarScroll" />
                 <Navbar.Collapse id="navbarScroll">
                     <Nav
@@ -24,11 +19,11 @@ const NavBar = (props) => {
                         style={{ maxHeight: '100px' }}
                         navbarScroll>
                         <div className="button-options">
-                            {props.user && <Button type="button" variant="outline-dark" onClick={() => props.logout()}>Log Out</Button>}
+                            {props.user && <Button type="button" variant="outline-light" onClick={() => props.logout()}>Log Out</Button>}
                             {!props.user &&
                                 <>
-                                    <Link to="/login" ><Button type="button" variant="outline-dark">Log In</Button></Link>
-                                    <Link to="/Register" ><Button type="button" variant="outline-dark">Register</Button></Link>
+                                    <Link to="/login" ><Button type="button" variant="outline-light">Log In</Button></Link>
+                                    <Link to="/Register" ><Button type="button" variant="outline-light">Register</Button></Link>
                                     {/* <Link to="/" ><button type="button">Home</button></Link> */}
                                 </>}
                         </div>

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Table, Button } from "react-bootstrap";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import VehicleEdit from "../VehicleEdit/VehicleEdit";
 import "./VehicleTable.css"
 
@@ -47,6 +47,7 @@ const VehicleTable = (props) => {
                         <th>Drive Type</th>
                         <th>Fuel Type</th>
                         <th>VIN Number</th>
+                        <th></th>
                     </tr>
                 </thead>
                 <tbody>

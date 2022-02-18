@@ -401,6 +401,8 @@ const ServiceTable = (props) => {
                             <ListGroup.Item>Other Services: {service.other_repairs}</ListGroup.Item>
                             <ListGroup.Item>Details: {service.service_details}</ListGroup.Item>
                             <ListGroup.Item><strong>Service Total: {service.service_grand_total} </strong></ListGroup.Item>
+                            <br />
+                            <br />
                         </ListGroup>
                     );
                 })}
@@ -445,6 +447,8 @@ const ServiceTable = (props) => {
                             <ListGroup.Item>Other Services: {service.other_repairs}</ListGroup.Item>
                             <ListGroup.Item>Details: {service.service_details}</ListGroup.Item>
                             <ListGroup.Item><strong>Service Total: {service.service_grand_total} </strong></ListGroup.Item>
+                            <br />
+                            <br />
                         </ListGroup>
                     );
                 })}

@@ -24,6 +24,7 @@ function App() {
   const [serviceInfo, setServiceInfo] = useState([]);
   const [vehicles, setVehicles] = useState([]);
   const [selectedVehicle, setSelectedVehicle] = useState();
+  const [results, setResults] = useState([]);
 
   useEffect(() => {
     const token = localStorage.getItem("token");
@@ -175,6 +176,21 @@ function App() {
       headers: { Authorization: "Bearer " + jwt },
     });
   }
+
+/*   const filter = (searchTerm) => {
+    console.log(searchTerm);
+    let searchRetults = allSongs.filter((song) => {
+      if (song.title.toLowerCase().includes(searchTerm.toLowerCase())
+        + song.album.toLowerCase().includes(searchTerm.toLowerCase())
+        + song.artist.toLowerCase().includes(searchTerm.toLowerCase())
+        + song.genre.toLowerCase().includes(searchTerm.toLowerCase())
+        + song.release_date.includes(searchTerm)) {
+        return true
+      }
+      else return false
+    });
+    setResults(searchRetults)
+  } */
 
   return (
     <div>

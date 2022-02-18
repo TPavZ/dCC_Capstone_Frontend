@@ -4,6 +4,7 @@ import { Navbar, Container, Nav } from "react-bootstrap";
 import "./NavBar.css"
 import { Link } from "react-router-dom";
 import Button from "react-bootstrap/Button";
+import SearchBar from "../`ForLaterVersion/SearchBar/SearchBar";
 
 
 const NavBar = (props) => {
@@ -33,6 +34,7 @@ const NavBar = (props) => {
                                 </>}
                         </div>
                     </Nav>
+                    <SearchBar />
                 </Navbar.Collapse>
             </Container>
         </Navbar>

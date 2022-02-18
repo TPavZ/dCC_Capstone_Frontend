@@ -109,29 +109,29 @@ const ServiceForm = (props) => {
                 <div className="check-boxes">
                     <div><input type="checkbox" name="battery_service" id="true" value={batteryService} onChange={(e) => setBatteryService(!batteryService)}></input> Battery Service</div>
                     <div><input type="checkbox" name="brakefluid_service" id="true" value={brakefluidService} onChange={(e) => setBrakefluidService(!brakefluidService)}></input> Brake Fluid Service</div>
-                    <div><input type="checkbox" name="brakefront_service" id="true" value={brakefrontService} onChange={(e) => setBrakefrontService(e.target.value)}></input> Front Brake Service</div>
-                    <div><input type="checkbox" name="brakerear_service" id="true" value={brakerearService} onChange={(e) => setBrakerearService(e.target.value)}></input> Rear Brake Service</div>
-                    <div><input type="checkbox" name="bulb_replacement" id="true" value={bulbReplacement} onChange={(e) => setBulbReplacement(e.target.value)}></input> Bulb Replacement</div>
-                    <div><input type="checkbox" name="cabinfilter_replacement" id="true" value={cabinfilterReplacement} onChange={(e) => setCabinfilterReplacement(e.target.value)}></input> Cabin Filter Replacement</div>
-                    <div><input type="checkbox" name="coolant_service" id="true" value={coolantService} onChange={(e) => setCoolantService(e.target.value)}></input> Coolant Service</div>
-                    <div><input type="checkbox" name="differential_service" id="true" value={differentialService} onChange={(e) => setDifferentialService(e.target.value)}></input> Differential Service</div>
-                    <div><input type="checkbox" name="drivebelt_replacement" id="true" value={drivebeltReplacement} onChange={(e) => setDrivebeltReplacement(e.target.value)}></input> Drivebelt Replacement</div>
-                    <div><input type="checkbox" name="electrical_investigation" id="true" value={electricalInvestigation} onChange={(e) => setElectricalInvestigation(e.target.value)}></input> Electrical investigation</div>
-                    <div><input type="checkbox" name="enginefilter_replacement" id="true" value={enginefilterReplacement} onChange={(e) => setEnginefilterReplacement(e.target.value)}></input> Engine Filter Replacement</div>
-                    <div><input type="checkbox" name="exahust_service" id="true" value={exahustService} onChange={(e) => setExahustService(e.target.value)}></input> Exahust Service</div>
-                    <div><input type="checkbox" name="fuelfilter_replacement" id="true" value={fuelfilterReplacement} onChange={(e) => setFuelfilterReplacement(e.target.value)}></input> Fuel Filter Replacement</div>
-                    <div><input type="checkbox" name="mechanical_investigation" id="true" value={mechanicalInvestigation} onChange={(e) => setMechanicalInvestigation(e.target.value)}></input> Mechanical Investigation</div>
-                    <div><input type="checkbox" name="oil_change" id="true" value={oilChange} onChange={(e) => setOilChange(e.target.value)}></input> Oil Change</div>
-                    <div><input type="checkbox" name="powersteering_service" id="true" value={powersteeringService} onChange={(e) => setPowersteeringService(e.target.value)}></input> Powersteering Service</div>
-                    <div><input type="checkbox" name="sparkplug_service" id="true" value={sparkplugService} onChange={(e) => setSparkplugService(e.target.value)}></input> Sparkplug Service</div>
-                    <div><input type="checkbox" name="steering_repair" id="true" value={steeringRepair} onChange={(e) => setSteeringRepair(e.target.value)}></input> Steering Repair</div>
-                    <div><input type="checkbox" name="suspension_repair" id="true" value={suspensionRepair} onChange={(e) => setSuspensionRepair(e.target.value)}></input> Suspension Repair</div>
-                    <div><input type="checkbox" name="tire_repair" id="true" value={tireRepair} onChange={(e) => setTireRepair(e.target.value)}></input> Tire Repair</div>
-                    <div><input type="checkbox" name="tire_replacement" id="true" value={tireReplacement} onChange={(e) => setTireReplacement(e.target.value)}></input> Tire Replacement</div>
-                    <div><input type="checkbox" name="tire_rotation" id="true" value={tireRotation} onChange={(e) => setTireRotation(e.target.value)}></input> Tire Rotation</div>
-                    <div><input type="checkbox" name="transfercase_service" id="true" value={transfercaseService} onChange={(e) => setTransfercaseService(e.target.value)}></input> Transfer Case Service</div>
-                    <div><input type="checkbox" name="transmission_service" id="true" value={transmissionService} onChange={(e) => setTransmissionService(e.target.value)}></input> Transmission Service</div>
-                    <div><input type="checkbox" name="wiperblade_replacement" id="true" value={wiperbladeReplacement} onChange={(e) => setWiperbladeReplacement(e.target.value)}></input> Wiperbalde Replacement</div>
+                    <div><input type="checkbox" name="brakefront_service" id="true" value={brakefrontService} onChange={(e) => setBrakefrontService(!brakefrontService)}></input> Front Brake Service</div>
+                    <div><input type="checkbox" name="brakerear_service" id="true" value={brakerearService} onChange={(e) => setBrakerearService(!brakerearService)}></input> Rear Brake Service</div>
+                    <div><input type="checkbox" name="bulb_replacement" id="true" value={bulbReplacement} onChange={(e) => setBulbReplacement(!bulbReplacement)}></input> Bulb Replacement</div>
+                    <div><input type="checkbox" name="cabinfilter_replacement" id="true" value={cabinfilterReplacement} onChange={(e) => setCabinfilterReplacement(!cabinfilterReplacement)}></input> Cabin Filter Replacement</div>
+                    <div><input type="checkbox" name="coolant_service" id="true" value={coolantService} onChange={(e) => setCoolantService(!coolantService)}></input> Coolant Service</div>
+                    <div><input type="checkbox" name="differential_service" id="true" value={differentialService} onChange={(e) => setDifferentialService(!differentialService)}></input> Differential Service</div>
+                    <div><input type="checkbox" name="drivebelt_replacement" id="true" value={drivebeltReplacement} onChange={(e) => setDrivebeltReplacement(!drivebeltReplacement)}></input> Drivebelt Replacement</div>
+                    <div><input type="checkbox" name="electrical_investigation" id="true" value={electricalInvestigation} onChange={(e) => setElectricalInvestigation(!electricalInvestigation)}></input> Electrical investigation</div>
+                    <div><input type="checkbox" name="enginefilter_replacement" id="true" value={enginefilterReplacement} onChange={(e) => setEnginefilterReplacement(!enginefilterReplacement)}></input> Engine Filter Replacement</div>
+                    <div><input type="checkbox" name="exahust_service" id="true" value={exahustService} onChange={(e) => setExahustService(!exahustService)}></input> Exahust Service</div>
+                    <div><input type="checkbox" name="fuelfilter_replacement" id="true" value={fuelfilterReplacement} onChange={(e) => setFuelfilterReplacement(!fuelfilterReplacement)}></input> Fuel Filter Replacement</div>
+                    <div><input type="checkbox" name="mechanical_investigation" id="true" value={mechanicalInvestigation} onChange={(e) => setMechanicalInvestigation(!mechanicalInvestigation)}></input> Mechanical Investigation</div>
+                    <div><input type="checkbox" name="oil_change" id="true" value={oilChange} onChange={(e) => setOilChange(!oilChange)}></input> Oil Change</div>
+                    <div><input type="checkbox" name="powersteering_service" id="true" value={powersteeringService} onChange={(e) => setPowersteeringService(!powersteeringService)}></input> Powersteering Service</div>
+                    <div><input type="checkbox" name="sparkplug_service" id="true" value={sparkplugService} onChange={(e) => setSparkplugService(!sparkplugService)}></input> Sparkplug Service</div>
+                    <div><input type="checkbox" name="steering_repair" id="true" value={steeringRepair} onChange={(e) => setSteeringRepair(!steeringRepair)}></input> Steering Repair</div>
+                    <div><input type="checkbox" name="suspension_repair" id="true" value={suspensionRepair} onChange={(e) => setSuspensionRepair(!suspensionRepair)}></input> Suspension Repair</div>
+                    <div><input type="checkbox" name="tire_repair" id="true" value={tireRepair} onChange={(e) => setTireRepair(!tireRepair)}></input> Tire Repair</div>
+                    <div><input type="checkbox" name="tire_replacement" id="true" value={tireReplacement} onChange={(e) => setTireReplacement(!tireReplacement)}></input> Tire Replacement</div>
+                    <div><input type="checkbox" name="tire_rotation" id="true" value={tireRotation} onChange={(e) => setTireRotation(!tireRotation)}></input> Tire Rotation</div>
+                    <div><input type="checkbox" name="transfercase_service" id="true" value={transfercaseService} onChange={(e) => setTransfercaseService(!transfercaseService)}></input> Transfer Case Service</div>
+                    <div><input type="checkbox" name="transmission_service" id="true" value={transmissionService} onChange={(e) => setTransmissionService(!transmissionService)}></input> Transmission Service</div>
+                    <div><input type="checkbox" name="wiperblade_replacement" id="true" value={wiperbladeReplacement} onChange={(e) => setWiperbladeReplacement(!wiperbladeReplacement)}></input> Wiperbalde Replacement</div>
                 </div>
                 <div><Textarea name="major_repairs" type="textare" value={majorRepairs} placeholder="Major Repairs?" onChange={(e) => setMajorRepairs(e.target.value)}></Textarea> </div>
                 <div><Textarea name="other_services" type="textare" value={otherServices} placeholder="Other Services?" onChange={(e) => setOtherServices(e.target.value)}></Textarea> </div>

@@ -172,152 +172,152 @@ const ServiceTable = (props) => {
             if (services[i].battery_service === null || services[i].battery_service === false) {
                 services[i].battery_service = "secondary";
             }
-            else if (services[i].battery_service !== null || services[i].battery_service !== false) {
-                services[i].battery_service = "success"
+            else if (vehicleServices[i].battery_service !== null || vehicleServices[i].battery_service !== false) {
+                vehicleServices[i].battery_service = "success"
             }
-            if (services[i].brakefluid_service === null || services[i].brakefluid_service === false) {
-                services[i].brakefluid_service = "secondary"
+            if (vehicleServices[i].brakefluid_service === null || vehicleServices[i].brakefluid_service === false) {
+                vehicleServices[i].brakefluid_service = "secondary"
             }
-            else if (services[i].brakefluid_service !== null || services[i].brakefluid_service !== false) {
-                services[i].brakefluid_service = "success"
+            else if (vehicleServices[i].brakefluid_service !== null || vehicleServices[i].brakefluid_service !== false) {
+                vehicleServices[i].brakefluid_service = "success"
             }
-            if (services[i].brakefront_service === null || services[i].brakefront_service === false) {
-                services[i].brakefront_service = "secondary"
+            if (vehicleServices[i].brakefront_service === null || vehicleServices[i].brakefront_service === false) {
+                vehicleServices[i].brakefront_service = "secondary"
             }
-            else if (services[i].brakefront_service !== null || services[i].brakefront_service !== false) {
-                services[i].brakefront_service = "success"
+            else if (vehicleServices[i].brakefront_service !== null || vehicleServices[i].brakefront_service !== false) {
+                vehicleServices[i].brakefront_service = "success"
             }
-            if (services[i].brakerear_service === null || services[i].brakerear_service === false) {
-                services[i].brakerear_service = "secondary"
+            if (vehicleServices[i].brakerear_service === null || vehicleServices[i].brakerear_service === false) {
+                vehicleServices[i].brakerear_service = "secondary"
             }
-            else if (services[i].brakerear_service !== null || services[i].brakerear_service !== false) {
-                services[i].brakerear_service = "success"
+            else if (vehicleServices[i].brakerear_service !== null || vehicleServices[i].brakerear_service !== false) {
+                vehicleServices[i].brakerear_service = "success"
             }
-            if (services[i].bulb_replacement === null || services[i].bulb_replacement === false) {
-                services[i].bulb_replacement = "secondary"
+            if (vehicleServices[i].bulb_replacement === null || vehicleServices[i].bulb_replacement === false) {
+                vehicleServices[i].bulb_replacement = "secondary"
             }
-            else if (services[i].bulb_replacement !== null || services[i].bulb_replacement !== false) {
-                services[i].bulb_replacement = "success"
+            else if (vehicleServices[i].bulb_replacement !== null || vehicleServices[i].bulb_replacement !== false) {
+                vehicleServices[i].bulb_replacement = "success"
             }
-            if (services[i].cabinfilter_replacement === null || services[i].cabinfilter_replacement === false) {
-                services[i].cabinfilter_replacement = "secondary"
+            if (vehicleServices[i].cabinfilter_replacement === null || vehicleServices[i].cabinfilter_replacement === false) {
+                vehicleServices[i].cabinfilter_replacement = "secondary"
             }
-            else if (services[i].cabinfilter_replacement !== null || services[i].cabinfilter_replacement !== false) {
-                services[i].cabinfilter_replacement = "success"
+            else if (vehicleServices[i].cabinfilter_replacement !== null || vehicleServices[i].cabinfilter_replacement !== false) {
+                vehicleServices[i].cabinfilter_replacement = "success"
             }
-            if (services[i].coolant_service === null || services[i].coolant_service === false) {
-                services[i].coolant_service = "secondary"
+            if (vehicleServices[i].coolant_service === null || vehicleServices[i].coolant_service === false) {
+                vehicleServices[i].coolant_service = "secondary"
             }
-            else if (services[i].coolant_service !== null || services[i].coolant_service !== false) {
-                services[i].coolant_service = "success"
+            else if (vehicleServices[i].coolant_service !== null || vehicleServices[i].coolant_service !== false) {
+                vehicleServices[i].coolant_service = "success"
             }
-            if (services[i].differential_service === null || services[i].differential_service === false) {
-                services[i].differential_service = "secondary"
+            if (vehicleServices[i].differential_service === null || vehicleServices[i].differential_service === false) {
+                vehicleServices[i].differential_service = "secondary"
             }
-            else if (services[i].differential_service !== null || services[i].differential_service !== false) {
-                services[i].differential_service = "success"
+            else if (vehicleServices[i].differential_service !== null ||vehicleServices[i].differential_service !== false) {
+                vehicleServices[i].differential_service = "success"
             }
-            if (services[i].drivebelt_replacement === null || services[i].drivebelt_replacement === false) {
-                services[i].drivebelt_replacement = "secondary"
+            if (vehicleServices[i].drivebelt_replacement === null || vehicleServices[i].drivebelt_replacement === false) {
+                vehicleServices[i].drivebelt_replacement = "secondary"
             }
-            else if (services[i].drivebelt_replacement !== null || services[i].drivebelt_replacement !== false) {
-                services[i].drivebelt_replacement = "success"
+            else if (vehicleServices[i].drivebelt_replacement !== null || vehicleServices[i].drivebelt_replacement !== false) {
+                vehicleServices[i].drivebelt_replacement = "success"
             }
-            if (services[i].electrical_investigation === null || services[i].electrical_investigation === false) {
-                services[i].electrical_investigation = "secondary"
+            if (vehicleServices[i].electrical_investigation === null || vehicleServices[i].electrical_investigation === false) {
+                vehicleServices[i].electrical_investigation = "secondary"
             }
-            else if (services[i].electrical_investigation !== null || services[i].electrical_investigation !== false) {
-                services[i].electrical_investigation = "success"
+            else if (vehicleServices[i].electrical_investigation !== null || vehicleServices[i].electrical_investigation !== false) {
+                vehicleServices[i].electrical_investigation = "success"
             }
-            if (services[i].enginefilter_replacement === null || services[i].enginefilter_replacement === false) {
-                services[i].enginefilter_replacement = "secondary"
+            if (vehicleServices[i].enginefilter_replacement === null || vehicleServices[i].enginefilter_replacement === false) {
+                vehicleServices[i].enginefilter_replacement = "secondary"
             }
-            else if (services[i].enginefilter_replacement !== null || services[i].enginefilter_replacement !== false) {
-                services[i].enginefilter_replacement = "success"
+            else if (vehicleServices[i].enginefilter_replacement !== null || vehicleServices[i].enginefilter_replacement !== false) {
+                vehicleServices[i].enginefilter_replacement = "success"
             }
-            if (services[i].exahust_service === null || services[i].exahust_service === false) {
-                services[i].exahust_service = "secondary"
+            if (vehicleServices[i].exahust_service === null || vehicleServices[i].exahust_service === false) {
+                vehicleServices[i].exahust_service = "secondary"
             }
-            else if (services[i].exahust_service !== null || services[i].exahust_service !== false) {
-                services[i].exahust_service = "success"
+            else if (vehicleServices[i].exahust_service !== null || vehicleServices[i].exahust_service !== false) {
+                vehicleServices[i].exahust_service = "success"
             }
-            if (services[i].fuelfilter_replacement === null || services[i].fuelfilter_replacement === false) {
-                services[i].fuelfilter_replacement = "secondary"
+            if (vehicleServices[i].fuelfilter_replacement === null || vehicleServices[i].fuelfilter_replacement === false) {
+                vehicleServices[i].fuelfilter_replacement = "secondary"
             }
-            else if (services[i].fuelfilter_replacement !== null || services[i].fuelfilter_replacement !== false) {
-                services[i].fuelfilter_replacement = "success"
+            else if (vehicleServices[i].fuelfilter_replacement !== null || vehicleServices[i].fuelfilter_replacement !== false) {
+                vehicleServices[i].fuelfilter_replacement = "success"
             }
-            if (services[i].mechanical_investigation === null || services[i].mechanical_investigation === false) {
-                services[i].mechanical_investigation = "secondary"
+            if (vehicleServices[i].mechanical_investigation === null || vehicleServices[i].mechanical_investigation === false) {
+                vehicleServices[i].mechanical_investigation = "secondary"
             }
-            else if (services[i].mechanical_investigation !== null || services[i].mechanical_investigation !== false) {
-                services[i].mechanical_investigation = "success"
+            else if (vehicleServices[i].mechanical_investigation !== null || vehicleServices[i].mechanical_investigation !== false) {
+                vehicleServices[i].mechanical_investigation = "success"
             }
-            if (services[i].oil_change === null || services[i].oil_change === false) {
-                services[i].oil_change = "secondary"
+            if (vehicleServices[i].oil_change === null || vehicleServices[i].oil_change === false) {
+                vehicleServices[i].oil_change = "secondary"
             }
-            else if (services[i].oil_change !== null || services[i].oil_change !== false) {
-                services[i].oil_change = "success"
+            else if (vehicleServices[i].oil_change !== null || vehicleServices[i].oil_change !== false) {
+                vehicleServices[i].oil_change = "success"
             }
-            if (services[i].powersteering_service === null || services[i].powersteering_service === false) {
-                services[i].powersteering_service = "secondary"
+            if (vehicleServices[i].powersteering_service === null || vehicleServices[i].powersteering_service === false) {
+                vehicleServices[i].powersteering_service = "secondary"
             }
-            else if (services[i].powersteering_service !== null || services[i].powersteering_service !== false) {
-                services[i].powersteering_service = "success"
+            else if (vehicleServices[i].powersteering_service !== null || vehicleServices[i].powersteering_service !== false) {
+                vehicleServices[i].powersteering_service = "success"
             }
-            if (services[i].sparkplug_service === null || services[i].sparkplug_service === false) {
-                services[i].sparkplug_service = "secondary"
+            if (vehicleServices[i].sparkplug_service === null || vehicleServices[i].sparkplug_service === false) {
+                vehicleServices[i].sparkplug_service = "secondary"
             }
-            else if (services[i].sparkplug_service !== null || services[i].sparkplug_service !== false) {
-                services[i].sparkplug_service = "success"
+            else if (vehicleServices[i].sparkplug_service !== null || vehicleServices[i].sparkplug_service !== false) {
+                vehicleServices[i].sparkplug_service = "success"
             }
-            if (services[i].steering_repair === null || services[i].steering_repair === false) {
-                services[i].steering_repair = "secondary"
+            if (vehicleServices[i].steering_repair === null || vehicleServices[i].steering_repair === false) {
+                vehicleServices[i].steering_repair = "secondary"
             }
-            else if (services[i].steering_repair !== null || services[i].steering_repair !== false) {
-                services[i].steering_repair = "success"
+            else if (vehicleServices[i].steering_repair !== null || vehicleServices[i].steering_repair !== false) {
+                vehicleServices[i].steering_repair = "success"
             }
-            if (services[i].suspension_repair === null || services[i].suspension_repair === false) {
-                services[i].suspension_repair = "secondary"
+            if (vehicleServices[i].suspension_repair === null || vehicleServices[i].suspension_repair === false) {
+                vehicleServices[i].suspension_repair = "secondary"
             }
-            else if (services[i].suspension_repair !== null || services[i].suspension_repair !== false) {
-                services[i].suspension_repair = "success"
+            else if (vehicleServices[i].suspension_repair !== null || vehicleServices[i].suspension_repair !== false) {
+                vehicleServices[i].suspension_repair = "success"
             }
-            if (services[i].tire_repair === null || services[i].tire_repair === false) {
-                services[i].tire_repair = "secondary"
+            if (vehicleServices[i].tire_repair === null || vehicleServices[i].tire_repair === false) {
+                vehicleServices[i].tire_repair = "secondary"
             }
-            else if (services[i].tire_repair !== null || services[i].tire_repair !== false) {
-                services[i].tire_repair = "success"
+            else if (vehicleServices[i].tire_repair !== null || vehicleServices[i].tire_repair !== false) {
+                vehicleServices[i].tire_repair = "success"
             }
-            if (services[i].tire_replacement === null || services[i].tire_replacement === false) {
-                services[i].tire_replacement = "secondary"
+            if (vehicleServices[i].tire_replacement === null || vehicleServices[i].tire_replacement === false) {
+                vehicleServices[i].tire_replacement = "secondary"
             }
-            else if (services[i].tire_replacement !== null || services[i].tire_replacement !== false) {
-                services[i].tire_replacement = "success"
+            else if (vehicleServices[i].tire_replacement !== null || vehicleServices[i].tire_replacement !== false) {
+                vehicleServices[i].tire_replacement = "success"
             }
-            if (services[i].tire_rotation === null || services[i].tire_rotation === false) {
-                services[i].tire_rotation = "secondary"
+            if (vehicleServices[i].tire_rotation === null || vehicleServices[i].tire_rotation === false) {
+                vehicleServices[i].tire_rotation = "secondary"
             }
-            else if (services[i].tire_rotation !== null || services[i].tire_rotation !== false) {
-                services[i].tire_rotation = "success"
+            else if (vehicleServices[i].tire_rotation !== null || vehicleServices[i].tire_rotation !== false) {
+                vehicleServices[i].tire_rotation = "success"
             }
-            if (services[i].transfercase_service === null || services[i].transfercase_service === false) {
-                services[i].transfercase_service = "secondary"
+            if (vehicleServices[i].transfercase_service === null || vehicleServices[i].transfercase_service === false) {
+                vehicleServices[i].transfercase_service = "secondary"
             }
-            else if (services[i].transfercase_service !== null || services[i].transfercase_service !== false) {
-                services[i].transfercase_service = "success"
+            else if (vehicleServices[i].transfercase_service !== null || vehicleServices[i].transfercase_service !== false) {
+                vehicleServices[i].transfercase_service = "success"
             }
-            if (services[i].transmission_service === null || services[i].transmission_service === false) {
-                services[i].transmission_service = "secondary"
+            if (vehicleServices[i].transmission_service === null || vehicleServices[i].transmission_service === false) {
+                vehicleServices[i].transmission_service = "secondary"
             }
-            else if (services[i].transmission_service !== null || services[i].transmission_service !== false) {
+            else if (vehicleServices[i].transmission_service !== null || vehicleServices[i].transmission_service !== false) {
                 services[i].transmission_service = "success"
             }
-            if (services[i].wiperblade_replacement === null || services[i].wiperblade_replacement === false) {
-                services[i].wiperblade_replacement = "secondary"
+            if (vehicleServices[i].wiperblade_replacement === null || vehicleServices[i].wiperblade_replacement === false) {
+                vehicleServices[i].wiperblade_replacement = "secondary"
             }
-            else if (services[i].wiperblade_replacement !== null || services[i].wiperblade_replacement !== false) {
-                services[i].wiperblade_replacement = "success"
+            else if (vehicleServices[i].wiperblade_replacement !== null || vehicleServices[i].wiperblade_replacement !== false) {
+                vehicleServices[i].wiperblade_replacement = "success"
             }
             tempcolors1.push(vehicleServices[i])
         }

@@ -11,7 +11,12 @@ const NavBar = (props) => {
         <Navbar bg="light" expand="lg" sticky="top">
             <Container fluid>
                 <Navbar.Brand>
-                    Service Logger</Navbar.Brand>
+                    <img
+                        src="/SERVICELOGGER.png"
+                        width="200"
+                        height="40"
+                        className="d-inline-block align-top"
+                        alt="Service Logger logo" />{' '}{/* Service Logger */}</Navbar.Brand>
                 <Navbar.Toggle aria-controls="navbarScroll" />
                 <Navbar.Collapse id="navbarScroll">
                     <Nav

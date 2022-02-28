@@ -1,6 +1,6 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect } from "react"
 import { Link, useLocation } from "react-router-dom";
-import Textarea from 'react-expanding-textarea'
+import Textarea from "react-expanding-textarea"
 import Button from "react-bootstrap/Button";
 import "./ServiceForm.css"
 /* I would like to have a drop down to select vehicle for users vehicle list
@@ -12,6 +12,11 @@ const ServiceForm = (props) => {
     const [currentMileage, setCurrentMileage] = useState("")
     const [serviceGrandTotal, setServiceGrandTotal] = useState("");
     const [serviceDate, setServiceDate] = useState("");
+    const [shopName, setShopName] = useState("");
+    const [shopStreet, setShopStreet] = useState("");
+    const [shopCity, setShopCity] = useState("");
+    const [shopState, setShopState] = useState("");
+    const [shopZipcode, setShopZipcode] = useState("");
     const [batteryService, setBatteryService] = useState(false);
     const [brakefluidService, setBrakefluidService] = useState(false);
     const [brakefrontService, setBrakefrontService] = useState("");
@@ -47,6 +52,11 @@ const ServiceForm = (props) => {
         setCurrentMileage("");
         setServiceGrandTotal("");
         setServiceDate("");
+        setShopName("");
+        setShopStreet("");
+        setShopCity("");
+        setShopState("");
+        setShopZipcode("");
         setMajorRepairs("");
         setOtherServices("");
         setServiceDetails("");
@@ -59,6 +69,11 @@ const ServiceForm = (props) => {
             "current_mileage": currentMileage,
             "service_grand_total": serviceGrandTotal,
             "service_date": serviceDate,
+            "shop_name": shopName,
+            "shop_street": shopStreet,
+            "shop_city": shopCity,
+            "shop_state": shopState,
+            "shop_zipcode": shopZipcode,
             "battery_service": batteryService,
             "brakefluid_service": brakefluidService,
             "brakefront_service": brakefrontService,
@@ -105,6 +120,63 @@ const ServiceForm = (props) => {
                 <div><input name="service_grand_total" type="text" value={serviceGrandTotal} placeholder="Total Repair Cost" onChange={(e) => setServiceGrandTotal(e.target.value)}></input> </div>
                 Date Of Service:
                 <div><input name="service_date" type="date" value={serviceDate} onChange={(e) => setServiceDate(e.target.value)}></input></div>
+                <div><input name="shop_name" type="text" value={shopName} placeholder="Shop Name" onChange={(e) => setShopName(e.target.value)}></input> </div>
+                <div><input name="shop_street" type="text" value={shopStreet} placeholder="Shop Address" onChange={(e) => setShopStreet(e.target.value)}></input> </div>
+                <div><input name="shop_city" type="text" value={shopCity} placeholder="Shop City" onChange={(e) => setShopCity(e.target.value)}></input> </div>
+                <div className="inputs"><select id="dropdown" name="shop_state" type="text" value={shopState} onChange={(e) => setShopState(e.target.value)}>
+                    <option placeholder="shop_state">Shop State</option>
+                    <option value="Alabama">AL</option>
+                    <option value="Alaska">AK</option>
+                    <option value="Arizona">AZ</option>
+                    <option value="Arkansas">AR</option>
+                    <option value="California">CA</option>
+                    <option value="Colorado">CO</option>
+                    <option value="Connecticut">CT</option>
+                    <option value="Delaware">DE</option>
+                    <option value="Florida">FL</option>
+                    <option value="Georgia">GA</option>
+                    <option value="Hawaii">HI</option>
+                    <option value="Idaho">ID</option>
+                    <option value="Illinois">IL</option>
+                    <option value="Indiana">IN</option>
+                    <option value="Iowa">IA</option>
+                    <option value="Kansas">KS</option>
+                    <option value="Kentucky">KY</option>
+                    <option value="Louisiana">LA</option>
+                    <option value="Maine">ME</option>
+                    <option value="Maryland">MD</option>
+                    <option value="Massachusetts">MA</option>
+                    <option value="Michigan">MI</option>
+                    <option value="Minnesota">MN</option>
+                    <option value="Mississippi">MS</option>
+                    <option value="Missouri">MO</option>
+                    <option value="Montana">MT</option>
+                    <option value="Nebraska">NE</option>
+                    <option value="Nevada">NV</option>
+                    <option value="New Hampshire">NH</option>
+                    <option value="New Jersey">NJ</option>
+                    <option value="New Mexico">NM</option>
+                    <option value="New York">NY</option>
+                    <option value="North Carolina">NC</option>
+                    <option value="North Dakota">ND</option>
+                    <option value="Ohio">OH</option>
+                    <option value="Oklahoma">OK</option>
+                    <option value="Oregon">OR</option>
+                    <option value="Pennsylvania">PA</option>
+                    <option value="Rhode Island">RI</option>
+                    <option value="South Carolina">SC</option>
+                    <option value="South Dakota">SD</option>
+                    <option value="Tennessee">TN</option>
+                    <option value="Texas">TX</option>
+                    <option value="Utah">UT</option>
+                    <option value="Vermont">VT</option>
+                    <option value="Virginia">VA</option>
+                    <option value="Washington">WA</option>
+                    <option value="West Virginia">WV</option>
+                    <option value="Wisconsin">WI</option>
+                    <option value="Wyoming">WY</option>
+                </select></div>
+                <div><input name="shop_zipcode" type="text" value={shopZipcode} placeholder="Shop Zipcode" onChange={(e) => setShopZipcode(e.target.value)}></input> </div>
                 <div><strong>Check Services That Have Been Completed.</strong></div>
                 <div className="check-boxes">
                     <div><input type="checkbox" name="battery_service" id="true" value={batteryService} onChange={(e) => setBatteryService(!batteryService)}></input> Battery Service</div>

@@ -4,11 +4,13 @@ import Button from "react-bootstrap/Button";
 import VehicleTable from "../VehicleTable/VehicleTable";
 import "./UserDashBoard.css"
 import { GoogleMap, withScriptjs, withGoogleMap, Marker } from "react-google-maps"
+import { useState } from "react";
 
 const UserDashBoard = (props) => {
 
     const navigate = useNavigate();
     const WrappedMap = withScriptjs(withGoogleMap(map));
+    const [selctedShop, setSelectedShop] = useState(null);
 
     function navigateServiceTable(vehicle) {
         navigate(`/viewlogs`, { state: { ...vehicle } });
@@ -16,7 +18,23 @@ const UserDashBoard = (props) => {
 
     function map() {
         return (
-            <GoogleMap defaultZoom={4} defaultCenter={{ lat: 37.090240, lng: -95.712891 }} />
+            <GoogleMap defaultZoom={4} defaultCenter={{ lat: 37.090240, lng: -95.712891 }}
+            >
+                {/* onClick={() => {
+                setSelectedShop(**currentshop**);
+            }}
+
+                {selctedShop && (
+                    <InfoWindow
+                        //! position
+                        onCloseClick={() => {
+                            setSelectedShop(null);
+                        }}
+                    >
+                        <div>Shop Details</div>
+                    </InfoWindow>
+                )} */}
+            </GoogleMap>
         );
     }
 
@@ -33,7 +51,7 @@ const UserDashBoard = (props) => {
                     - AND, a shop interface with maps integrations to track where services have been done.<br />
                     *Version two is due to be live within the next two weeks!</h4>
             </div>
-            <h4>Your Life Time Service Grand Total: <strong>$7,290.98</strong></h4> {/* //! somehow take the $ amount from each serivce log and add them together. */}
+            <h4>Your Life Time Service Grand Total: <strong>$$$:$$$</strong></h4> {/* //! Take the $ amount from each serivce log and add them together. */}
             <div className="add-button">
                 <Link to="/addvehicle" ><Button type="button" variant="outline-light">Add A New Vehicle</Button></Link>
             </div>

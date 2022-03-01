@@ -33,6 +33,14 @@ const UserDashBoard = (props) => {
                     - AND, a shop interface with maps integrations to track where services have been done.<br />
                     *Version two is due to be live within the next two weeks!</h4>
             </div>
+            <h4>Your Life Time Service Grand Total: <strong>$7,290.98</strong></h4> {/* //! somehow take the $ amount from each serivce log and add them together. */}
+            <div className="add-button">
+                <Link to="/addvehicle" ><Button type="button" variant="outline-light">Add A New Vehicle</Button></Link>
+            </div>
+            <VehicleTable get_selected_vehicle={props.get_selected_vehicle} get_user_vehicles={props.get_user_vehicles} vehicles={props.vehicles} delete_vehicle={props.delete_vehicle} edit_vehicle={props.edit_vehicle} />
+            <Button type="button" variant="outline-light" onClick={() => navigateServiceTable(props.user)}>View All Logs</Button>
+            <br></br>
+            <h4>Past Service Center Locations</h4>
             <div>
                 <WrappedMap googleMapURL={`https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=AIzaSyB4txLxCWLy_0K1BLj4_CxKDz5Os4V0Shw`}
                     loadingElement={<div style={{ height: `100%` }} />}
@@ -40,12 +48,6 @@ const UserDashBoard = (props) => {
                     mapElement={<div style={{ height: `100%` }} />}
                 />
             </div>
-            <h4>Your Life Time Service Grand Total: <strong>$7,290.98</strong></h4> {/* //! somehow take the $ amount from each serivce log and add them together. */}
-            <div className="add-button">
-                <Link to="/addvehicle" ><Button type="button" variant="outline-light">Add A New Vehicle</Button></Link>
-            </div>
-            <VehicleTable get_selected_vehicle={props.get_selected_vehicle} get_user_vehicles={props.get_user_vehicles} vehicles={props.vehicles} delete_vehicle={props.delete_vehicle} edit_vehicle={props.edit_vehicle} />
-            <Button type="button" variant="outline-light" onClick={() => navigateServiceTable(props.user)}>View All Logs</Button>
         </div>
     );
 }

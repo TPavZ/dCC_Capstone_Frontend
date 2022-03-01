@@ -4,7 +4,7 @@ import { Navbar, Container, Nav } from "react-bootstrap";
 import "./NavBar.css"
 import { Link } from "react-router-dom";
 import Button from "react-bootstrap/Button";
-import SearchBar from "../`ForLaterVersion/SearchBar/SearchBar";
+import SearchBar from "../SearchBar/SearchBar";
 
 
 const NavBar = (props) => {

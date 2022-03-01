@@ -3,13 +3,21 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Button from "react-bootstrap/Button";
 import VehicleTable from "../VehicleTable/VehicleTable";
 import "./UserDashBoard.css"
+import { GoogleMap, withScriptjs, withGoogleMap, Marker } from "react-google-maps"
 
 const UserDashBoard = (props) => {
 
     const navigate = useNavigate();
+    const WrappedMap = withScriptjs(withGoogleMap(map));
 
     function navigateServiceTable(vehicle) {
         navigate(`/viewlogs`, { state: { ...vehicle } });
+    }
+
+    function map() {
+        return (
+            <GoogleMap defaultZoom={4} defaultCenter={{ lat: 37.090240, lng: -95.712891 }} />
+        );
     }
 
     return (
@@ -24,6 +32,13 @@ const UserDashBoard = (props) => {
                     - Search bar to filter though serivces. <br />
                     - AND, a shop interface with maps integrations to track where services have been done.<br />
                     *Version two is due to be live within the next two weeks!</h4>
+            </div>
+            <div>
+                <WrappedMap googleMapURL={`https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=AIzaSyB4txLxCWLy_0K1BLj4_CxKDz5Os4V0Shw`}
+                    loadingElement={<div style={{ height: `100%` }} />}
+                    containerElement={<div style={{ height: `400px` }} />}
+                    mapElement={<div style={{ height: `100%` }} />}
+                />
             </div>
             <h4>Your Life Time Service Grand Total: <strong>$7,290.98</strong></h4> {/* //! somehow take the $ amount from each serivce log and add them together. */}
             <div className="add-button">

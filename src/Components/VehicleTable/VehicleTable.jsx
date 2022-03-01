@@ -8,7 +8,7 @@ const VehicleTable = (props) => {
     /* console.log(props.vehicles) */
 
     const [showForm, setShowForm] = useState(false);
-    const [editedVehicle, setEditedVehicle] = useState("")
+    const [editedVehicle, setEditedVehicle] = useState("");
     const navigate = useNavigate();
 
     function toggleEdit(vehicles) {
@@ -30,7 +30,6 @@ const VehicleTable = (props) => {
         navigate("/viewvehiclelogs");
         /* window.location="/viewvehiclelogs" */
     }
-
 
     return (
         <>

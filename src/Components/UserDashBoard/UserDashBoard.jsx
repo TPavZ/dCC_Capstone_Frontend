@@ -11,6 +11,23 @@ const UserDashBoard = (props) => {
     const navigate = useNavigate();
     const WrappedMap = withScriptjs(withGoogleMap(map));
     const [selctedShop, setSelectedShop] = useState(null);
+    const [userServices, setUserServices] = useState([]);
+
+    useEffect(() => {
+        get_user_services(props.user.id)
+    }, [props.user])
+
+
+    async function get_user_services(user_id) {
+        const jwt = localStorage.getItem("token");
+        await axios({
+            method: "get",
+            url: `http://127.0.0.1:8000/api/service_logs/user/services/`,
+            headers: { Authorization: "Bearer " + jwt },
+        }).then(response => {
+            setUserServices(response.data);
+        });
+    }
 
     function navigateServiceTable(vehicle) {
         navigate(`/viewlogs`, { state: { ...vehicle } });

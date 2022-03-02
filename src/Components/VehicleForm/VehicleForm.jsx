@@ -31,6 +31,7 @@ const VehicleForm = (props) => {
     function handleSubmit(e) {
         e.preventDefault();
         let vehicleInfo = {
+            "service_cost": 0.00,
             "vin": vin,
             "year": year,
             "make": make,

@@ -53,7 +53,7 @@ const VehicleTable = (props) => {
                     {props.vehicles.map((vehicle, index) => {
                         return (
                             <tr key={index}>
-                                <td>$$$.$$$</td>
+                                <td>{vehicle.service_cost}</td>
                                 <td>{vehicle.year}</td>
                                 <td>{vehicle.make}</td>
                                 <td>{vehicle.model}</td>

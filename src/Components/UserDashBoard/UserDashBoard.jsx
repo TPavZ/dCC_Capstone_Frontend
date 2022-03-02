@@ -13,11 +13,35 @@ const UserDashBoard = (props) => {
     const WrappedMap = withScriptjs(withGoogleMap(map));
     const [selctedShop, setSelectedShop] = useState(null);
     const [userServices, setUserServices] = useState([]);
+    const [userTotalCost, setUserTotalCost] = useState([]);
+    const [total, setTotal] = useState(0);
 
     useEffect(() => {
-        get_user_services(props.user.id)
+        if (props.user != null) {
+            get_user_services(props.user.id)
+        }
     }, [props.user])
 
+    useEffect(() => {
+        if (userServices && userServices.length > 0) {
+            let costlist = [];
+            for (let i = 0; i < userServices.length; i++) {
+                costlist.push(userServices[i].service_grand_total)
+            }
+            setUserTotalCost(costlist)
+        }
+    }, [userServices]);
+
+    useEffect(() => {
+        if (userTotalCost && userTotalCost.length > 0) {
+            let total = 0;
+            for (let i = 0; i < userTotalCost.length; i++) {
+                total += Number(userTotalCost[i])
+            }
+            let roundedtotal=total.toFixed(2)
+            setTotal(roundedtotal)
+        }
+    }, [userTotalCost]);
 
     async function get_user_services(user_id) {
         const jwt = localStorage.getItem("token");
@@ -69,7 +93,7 @@ const UserDashBoard = (props) => {
                     - AND, a shop interface with maps integrations to track where services have been done.<br />
                     *Version two is due to be live within the next two weeks!</h4> */}
             </div>
-            <h4>Your Life Time Service Grand Total: <strong>$$$:$$$</strong></h4> {/* //! Take the $ amount from each serivce log and add them together. */}
+            <h4>Your Life Time Service Grand Total: <strong>${total}</strong></h4> {/* //! Take the $ amount from each serivce log and add them together. */}
             <div className="add-button">
                 <Link to="/addvehicle" ><Button type="button" variant="outline-light">Add A New Vehicle</Button></Link>
             </div>

@@ -115,7 +115,7 @@ function App() {
   }
 
   async function delete_vehicle(vehicle) {
-    let approveDelete = window.confirm(`Delete this vehicle?\n\nOK for yes. Cancel for no.`)
+    let approveDelete = window.confirm(`Delete this vehicle?\n\nOK to delete vehicle.1`)
     if (approveDelete) {
       const jwt = localStorage.getItem("token");
       await axios({

@@ -28,7 +28,7 @@ const SearchBar = (props) => {
         });
         setResults(searchResults);
         navigate("/search");
-    }
+    } //! add error if no results are found.
 
     return (
         <form onSubmit={handleSubmit} className="search-bar">

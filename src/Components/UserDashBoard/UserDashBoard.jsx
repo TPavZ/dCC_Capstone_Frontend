@@ -41,15 +41,15 @@ const UserDashBoard = (props) => {
     return (
         <div>
             <div className="welcome-message">
-                <h2>Welcome to your user dashboard!</h2>
-                <h4>There are exciting things coming! <br />
+                <h2>Welcome To The Dashboard!</h2>
+                {/* <h4>There are exciting things coming! <br />
                     Version two will include more features; <br />
                     - The service total per vehicle will be calculated and added the table below. <br />
                     - The grand total though out the entire history of entered logs will display within
                     this dashbord. <br />
                     - Search bar to filter though serivces. <br />
                     - AND, a shop interface with maps integrations to track where services have been done.<br />
-                    *Version two is due to be live within the next two weeks!</h4>
+                    *Version two is due to be live within the next two weeks!</h4> */}
             </div>
             <h4>Your Life Time Service Grand Total: <strong>$$$:$$$</strong></h4> {/* //! Take the $ amount from each serivce log and add them together. */}
             <div className="add-button">

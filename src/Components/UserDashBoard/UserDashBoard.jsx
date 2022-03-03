@@ -6,6 +6,25 @@ import "./UserDashBoard.css"
 import { GoogleMap, withScriptjs, withGoogleMap, Marker } from "react-google-maps"
 import { useState, useEffect } from "react";
 import axios from "axios";
+import {
+    Chart as ChartJS,
+    CategoryScale,
+    LinearScale,
+    BarElement,
+    Title,
+    Tooltip,
+    Legend,
+} from 'chart.js';
+import { Bar } from "react-chartjs-2";
+
+ChartJS.register(
+    CategoryScale,
+    LinearScale,
+    BarElement,
+    Title,
+    Tooltip,
+    Legend,
+)
 
 const UserDashBoard = (props) => {
 
@@ -15,6 +34,35 @@ const UserDashBoard = (props) => {
     const [userServices, setUserServices] = useState([]);
     const [userTotalCost, setUserTotalCost] = useState([]);
     const [total, setTotal] = useState(0);
+    const [chartData, setChartData] = useState({
+        datasets: [],
+    });
+    const [chartOptions, setChartOptions] = useState({});
+
+    useEffect(() => {
+        setChartData({
+            labels: ['Red', 'Orange', 'Yellow', 'Green', 'Blue', 'Purple'],
+            datasets: [{
+                label: "Service Dollars Spent Per Vehicle Lifetime",
+                data: [12, 19, 3, 5, 2, 3],
+                borderColor: "rgb(255, 255, 255)",
+                backgroundColor: "rgba(70, 69, 69, 0.479)",
+            }]
+        });
+        setChartOptions({
+            repoonsive: true,
+            plugins: {
+                legend: "top"
+            },
+            title: {
+                display: true,
+                text: "Popular Colors",
+            },
+            gridLines: {
+                color: "rgb(255, 255, 255)",
+            },
+        })
+    }, []);
 
     useEffect(() => {
         if (props.user != null) {
@@ -38,7 +86,7 @@ const UserDashBoard = (props) => {
             for (let i = 0; i < userTotalCost.length; i++) {
                 total += Number(userTotalCost[i])
             }
-            let roundedtotal=total.toFixed(2)
+            let roundedtotal = total.toFixed(2)
             setTotal(roundedtotal)
         }
     }, [userTotalCost]);
@@ -99,6 +147,10 @@ const UserDashBoard = (props) => {
             </div>
             <VehicleTable get_selected_vehicle={props.get_selected_vehicle} get_user_vehicles={props.get_user_vehicles} vehicles={props.vehicles} delete_vehicle={props.delete_vehicle} edit_vehicle={props.edit_vehicle} />
             <Button type="button" variant="outline-light" onClick={() => navigateServiceTable(props.user)}>View All Logs</Button>
+            <br></br>
+            <div className="bar-chart">
+                <Bar options={chartOptions} data={chartData} />
+            </div>
             <br></br>
             <h4>Past Service Center Locations</h4>
             <div>

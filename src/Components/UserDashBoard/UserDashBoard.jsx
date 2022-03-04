@@ -6,6 +6,7 @@ import "./UserDashBoard.css"
 import { GoogleMap, withScriptjs, withGoogleMap, Marker } from "react-google-maps"
 import { useState, useEffect } from "react";
 import axios from "axios";
+import MyChart from "../MyChart/MyChart";
 import {
     Chart as ChartJS,
     CategoryScale,
@@ -43,10 +44,16 @@ const UserDashBoard = (props) => {
         setChartData({
             labels: ['Red', 'Orange', 'Yellow', 'Green', 'Blue', 'Purple'],
             datasets: [{
-                label: "Service Dollars Spent Per Vehicle Lifetime",
+                label: "Dollars / Vehicle",
                 data: [12, 19, 3, 5, 2, 3],
                 borderColor: "rgb(255, 255, 255)",
-                backgroundColor: "rgba(70, 69, 69, 0.479)",
+                backgroundColor: ["#404040",
+                    "#C0C0C0",
+                    "#808080",
+                    "#202020",
+                    "#E0E0E0",
+                    "#606060",
+                ]
             }]
         });
         setChartOptions({
@@ -54,10 +61,10 @@ const UserDashBoard = (props) => {
             plugins: {
                 legend: "top"
             },
-            title: {
+            /* title: {
                 display: true,
                 text: "Popular Colors",
-            },
+            }, */
             gridLines: {
                 color: "rgb(255, 255, 255)",
             },
@@ -141,6 +148,9 @@ const UserDashBoard = (props) => {
                     - AND, a shop interface with maps integrations to track where services have been done.<br />
                     *Version two is due to be live within the next two weeks!</h4> */}
             </div>
+            <div className="chart">
+                <MyChart get_selected_vehicle={props.get_selected_vehicle} get_user_vehicles={props.get_user_vehicles} vehicles={props.vehicles} delete_vehicle={props.delete_vehicle} edit_vehicle={props.edit_vehicle}/>
+            </div>
             <h4>Your Life Time Service Grand Total: <strong>${total}</strong></h4> {/* //! Take the $ amount from each serivce log and add them together. */}
             <div className="add-button">
                 <Link to="/addvehicle" ><Button type="button" variant="outline-light">Add A New Vehicle</Button></Link>
@@ -148,18 +158,22 @@ const UserDashBoard = (props) => {
             <VehicleTable get_selected_vehicle={props.get_selected_vehicle} get_user_vehicles={props.get_user_vehicles} vehicles={props.vehicles} delete_vehicle={props.delete_vehicle} edit_vehicle={props.edit_vehicle} />
             <Button type="button" variant="outline-light" onClick={() => navigateServiceTable(props.user)}>View All Logs</Button>
             <br></br>
+            {/* <div>
+                <h4>Service Dollars Spent Per Vehicle Lifetime:</h4>
+            </div>
             <div className="bar-chart">
                 <Bar options={chartOptions} data={chartData} />
-            </div>
+            </div> */}
             <br></br>
             <h4>Past Service Center Locations</h4>
-            <div>
+            <div className="map">
                 <WrappedMap googleMapURL={`https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=AIzaSyB4txLxCWLy_0K1BLj4_CxKDz5Os4V0Shw`}
                     loadingElement={<div style={{ height: `100%` }} />}
-                    containerElement={<div style={{ height: `400px` }} />}
+                    containerElement={<div style={{ height: `400px`, width: `50%` }} />}
                     mapElement={<div style={{ height: `100%` }} />}
                 />
             </div>
+            
         </div>
     );
 }

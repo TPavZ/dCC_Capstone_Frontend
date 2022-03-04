@@ -169,8 +169,8 @@ const ServiceTable = (props) => {
             tempcolors.push(services[i])
         };
         for (let i = 0; i < vehicleServices.length; i++) {
-            if (services[i].battery_service === null || services[i].battery_service === false) {
-                services[i].battery_service = "secondary";
+            if (vehicleServices[i].battery_service === null || vehicleServices[i].battery_service === false) {
+                vehicleServices[i].battery_service = "secondary";
             }
             else if (vehicleServices[i].battery_service !== null || vehicleServices[i].battery_service !== false) {
                 vehicleServices[i].battery_service = "success"

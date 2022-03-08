@@ -34,7 +34,7 @@ const NavBar = (props) => {
                                 </>}
                         </div>
                     </Nav>
-                    <SearchBar get_user_vehicle_services={props.get_user_vehicle_services}/>
+                    {/* <SearchBar get_user_vehicle_services={props.get_user_vehicle_services}/> */}
                 </Navbar.Collapse>
             </Container>
         </Navbar>

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Chart } from "react-google-charts"
+import "./MyChart.css"
 
 const MyChart = (props) => {
 
@@ -7,17 +8,39 @@ const MyChart = (props) => {
     const options = {
         title: "Service Dollars Spent Per Vehicle Lifetime",
         chartArea: { width: "auto" },
-        colors: ["#808080"],
+        colors: ["#dbdbdb"],
         backgroundColor: {
-            fill: "rgba(70, 69, 69, 0.479)",
-            opacity: 0.4
+            fill: "transparent",
         },
         hAxis: {
             title: "Dollars",
             minValue: 0,
+            textStyle: {
+                color: "white"
+            },
+            titleTextStyle: {
+                color: "white"
+            },
+            gridlines: {
+                color: "white"
+            },
         },
         vAxis: {
             title: "Vehicle",
+            textStyle: {
+                color: "white"
+            },
+            titleTextStyle: {
+                color: "white"
+            },
+        },
+        legend: {
+            textStyle: {
+                color: "white"
+            }
+        },
+        titleTextStyle: {
+            color: "white"
         },
     };
 

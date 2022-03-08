@@ -165,14 +165,14 @@ const UserDashBoard = (props) => {
                 <Bar options={chartOptions} data={chartData} />
             </div> */}
             <br></br>
-            <h4>Past Service Center Locations</h4>
+            {/* <h4>Past Service Center Locations</h4>
             <div className="map">
                 <WrappedMap googleMapURL={`https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=AIzaSyB4txLxCWLy_0K1BLj4_CxKDz5Os4V0Shw`}
                     loadingElement={<div style={{ height: `100%` }} />}
                     containerElement={<div style={{ height: `400px`, width: `50%` }} />}
                     mapElement={<div style={{ height: `100%` }} />}
                 />
-            </div>
+            </div> */}
             
         </div>
     );

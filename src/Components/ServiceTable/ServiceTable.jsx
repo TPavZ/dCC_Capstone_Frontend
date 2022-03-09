@@ -417,7 +417,7 @@ const ServiceTable = (props) => {
                 {colors && colors.length > 0 && colors.map((service, index) => {
                     return (
                         <ListGroup>
-                            <ListGroup.Item><strong>Vehicle: { } | Milage: { } | Service Date: { } | Shop: { }</strong></ListGroup.Item>
+                            <ListGroup.Item><strong>{/* Vehicle: {props.year} {props.make} {props.model} | Milage: {service.current_mileage} |  */}Service Date: {service.service_date}{/*  | Shop: { } */}</strong></ListGroup.Item>
                             <ListGroup.Item variant={service.battery_service}>Battery Service</ListGroup.Item>
                             <ListGroup.Item variant={service.brakefluid_service}>Brake Fluid Service</ListGroup.Item>
                             <ListGroup.Item variant={service.brakefront_service}>Front Brakes</ListGroup.Item>

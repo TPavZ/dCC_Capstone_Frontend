@@ -120,7 +120,7 @@ const ServiceForm = (props) => {
                 <div><input name="service_grand_total" type="text" value={serviceGrandTotal} placeholder="Total Repair Cost" onChange={(e) => setServiceGrandTotal(e.target.value)}></input> </div>
                 Date Of Service:
                 <div><input name="service_date" type="date" value={serviceDate} onChange={(e) => setServiceDate(e.target.value)}></input></div>
-                <div><input name="shop_name" type="text" value={shopName} placeholder="Shop Name" onChange={(e) => setShopName(e.target.value)}></input> </div>
+                {/* <div><input name="shop_name" type="text" value={shopName} placeholder="Shop Name" onChange={(e) => setShopName(e.target.value)}></input> </div>
                 <div><input name="shop_street" type="text" value={shopStreet} placeholder="Shop Address" onChange={(e) => setShopStreet(e.target.value)}></input> </div>
                 <div><input name="shop_city" type="text" value={shopCity} placeholder="Shop City" onChange={(e) => setShopCity(e.target.value)}></input> </div>
                 <div className="inputs"><select id="dropdown" name="shop_state" type="text" value={shopState} onChange={(e) => setShopState(e.target.value)}>
@@ -176,7 +176,7 @@ const ServiceForm = (props) => {
                     <option value="Wisconsin">WI</option>
                     <option value="Wyoming">WY</option>
                 </select></div>
-                <div><input name="shop_zipcode" type="text" value={shopZipcode} placeholder="Shop Zipcode" onChange={(e) => setShopZipcode(e.target.value)}></input> </div>
+                <div><input name="shop_zipcode" type="text" value={shopZipcode} placeholder="Shop Zipcode" onChange={(e) => setShopZipcode(e.target.value)}></input> </div> */}
                 <div><strong>Check Services That Have Been Completed.</strong></div>
                 <div className="check-boxes">
                     <div><input type="checkbox" name="battery_service" id="true" value={batteryService} onChange={(e) => setBatteryService(!batteryService)}></input> Battery Service</div>

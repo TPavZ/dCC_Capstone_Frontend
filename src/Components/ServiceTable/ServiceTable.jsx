@@ -397,9 +397,9 @@ const ServiceTable = (props) => {
                             <ListGroup.Item variant={service.transfercase_service}>Transfercase Service</ListGroup.Item>
                             <ListGroup.Item variant={service.transmission_service}>Transmission Service</ListGroup.Item>
                             <ListGroup.Item variant={service.wiperblade_replacement}>Wiperblade Replacement</ListGroup.Item>
-                            <ListGroup.Item>Major Repairs: {service.major_repairs}</ListGroup.Item>
-                            <ListGroup.Item>Other Services: {service.other_repairs}</ListGroup.Item>
-                            <ListGroup.Item>Details: {service.service_details}</ListGroup.Item>
+                            <ListGroup.Item>Major Repairs: {service.major_repairs} </ListGroup.Item>
+                            <ListGroup.Item>Other Services: {service.other_services} </ListGroup.Item>
+                            <ListGroup.Item>Details: {service.service_details} </ListGroup.Item>
                             <ListGroup.Item><strong>Service Total: {service.service_grand_total} </strong></ListGroup.Item>
                             <br />
                             <br />
@@ -444,7 +444,7 @@ const ServiceTable = (props) => {
                             <ListGroup.Item variant={service.transmission_service}>Transmission Service</ListGroup.Item>
                             <ListGroup.Item variant={service.wiperblade_replacement}>Wiperblade Replacement</ListGroup.Item>
                             <ListGroup.Item>Major Repairs: {service.major_repairs}</ListGroup.Item>
-                            <ListGroup.Item>Other Services: {service.other_repairs}</ListGroup.Item>
+                            <ListGroup.Item>Other Services: {service.other_services}</ListGroup.Item>
                             <ListGroup.Item>Details: {service.service_details}</ListGroup.Item>
                             <ListGroup.Item><strong>Service Total: {service.service_grand_total} </strong></ListGroup.Item>
                             <br />
